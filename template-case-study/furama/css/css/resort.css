@@ -29,7 +29,7 @@
     transform-origin: right;
     transition: transform 0.12s ease;
 }
-.dropout.active ul {
+.dropout:hover ul {
     /*padding: 5px;*/
     background-color: white;
     transform: scaleX(1);
