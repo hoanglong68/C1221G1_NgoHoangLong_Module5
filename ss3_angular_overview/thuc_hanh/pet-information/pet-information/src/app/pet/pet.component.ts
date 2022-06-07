@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Pet} from "../pet";
+import {Pet} from '../pet';
 
 @Component({
   selector: 'app-pet',
@@ -13,7 +13,7 @@ export class PetComponent implements OnInit {
   };
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
