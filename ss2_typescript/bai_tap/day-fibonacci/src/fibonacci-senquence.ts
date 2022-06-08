@@ -18,4 +18,3 @@ function totalNumberOfFibonacci(maximumCount: number) {
 }
 
  totalNumberOfFibonacci(20);
-// console.log("the total is: " + result);

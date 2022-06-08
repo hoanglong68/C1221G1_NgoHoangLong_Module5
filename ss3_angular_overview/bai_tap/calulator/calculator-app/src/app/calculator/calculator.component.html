@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Calculator</title>
   <style>
     body {
       background: url(http://www.inkspilldesign.com/demo/wood-tile-background.jpg);
@@ -111,28 +111,26 @@
 <div class="container">
   <fieldset id="container">
     <form name="calculator">
-
-      <input id="display" type="text" name="display" readonly>
-
-      <input class="button digits" type="button" value="7">
-      <input class="button digits" type="button" value="8">
-      <input class="button digits" type="button" value="9">
-      <input class="button mathButtons" type="button" value="+">
+        <input id="display" type="text" name="display" readonly [value]="currentNumber">
+        <input class="button digits" type="button" value="7" (click)="getNumber('7')">
+        <input class="button digits" type="button" value="8" (click)="getNumber('8')">
+        <input class="button digits" type="button" value="9" (click)="getNumber('9')">
+        <input class="button mathButtons" type="button" value="+" (click)="getOperator('+')">
       <br>
-      <input class="button digits" type="button" value="4">
-      <input class="button digits" type="button" value="5">
-      <input class="button digits" type="button" value="6">
-      <input class="button mathButtons" type="button" value="-">
+      <input class="button digits" type="button" value="4" (click)="getNumber('4')">
+      <input class="button digits" type="button" value="5" (click)="getNumber('5')">
+      <input class="button digits" type="button" value="6" (click)="getNumber('6')">
+      <input class="button mathButtons" type="button" value="-" (click)="getOperator('-')">
       <br>
-      <input class="button digits" type="button" value="1">
-      <input class="button digits" type="button" value="2">
-      <input class="button digits" type="button" value="3">
-      <input class="button mathButtons" type="button" value="x">
+      <input class="button digits" type="button" value="1" (click)="getNumber('1')">
+      <input class="button digits" type="button" value="2" (click)="getNumber('2')">
+      <input class="button digits" type="button" value="3" (click)="getNumber('3')">
+      <input class="button mathButtons" type="button" value="x" (click)="getOperator('*')">
       <br>
-      <input id="clearButton" class="button" type="button" value="C">
-      <input class="button digits" type="button" value="0">
-      <input class="button mathButtons" type="button" value="=">
-      <input class="button mathButtons" type="button" value="/">
+      <input id="clearButton" class="button" type="button" value="C" (click)="clear()">
+      <input class="button digits" type="button" value="0" (click)="getNumber('0')">
+      <input class="button mathButtons" type="button" value="=" (click)="getOperator('=')">
+      <input class="button mathButtons" type="button" value="/" (click)="getOperator('/')">
     </form>
   </fieldset>
 </div>
