@@ -8,6 +8,7 @@ import {Customer} from '../../model/Customer';
 })
 export class CustomerListComponent implements OnInit {
   customerList: Customer[] = [];
+  newCustomer: Customer = null;
 
   constructor() {
     this.customerList.push({
@@ -57,4 +58,13 @@ export class CustomerListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  private getCustomerById(id: number) {
+    for (const customer of this.customerList) {
+      if (customer.customerId === id) {
+        this.newCustomer = customer;
+        break;
+      }
+    }
+    return this.newCustomer;
+  }
 }

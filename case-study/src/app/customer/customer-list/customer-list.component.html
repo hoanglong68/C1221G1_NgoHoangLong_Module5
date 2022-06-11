@@ -5,7 +5,7 @@
         <h6 class="section-title text-center text-primary text-uppercase">*****</h6>
         <h1 class="mb-5">Customer <span class="text-primary text-uppercase">List</span></h1>
       </div>
-      <button class="custom-btn btn-14"><span>Add New</span></button>
+      <button class="custom-btn btn-14" [routerLink]="'/customer-create'"><span>Add New</span></button>
       <table class="table table-hover w-75 mx-auto">
         <thead class="thead-light">
         <tr class="table-warning">
@@ -21,7 +21,7 @@
         <tr *ngFor="let customer of customerList;let i = index">
           <th scope="row">{{i + 1}}</th>
           <td>
-            <a type="button" data-bs-toggle="modal" data-bs-target="#infoModal">
+            <a type="button" data-bs-toggle="modal" data-bs-target="#infoModal" (click)="getCustomerById(customer.customerId)">
               <i class="bi bi-info-circle-fill">
                 {{customer.customerName}}
               </i>
@@ -30,7 +30,7 @@
           <td>{{customer.customerDateOfBirth | date: "dd-MM-yyyy"}}</td>
           <td>
             <p *ngIf="customer.customerGender==1">Male</p>
-            <p *ngIf="customer.customerGender==2">Female</p>
+            <p *ngIf="customer.customerGender==0">Female</p>
             <!--          <ng-template #other>Bê Đê</ng-template>-->
           </td>
           <td>{{customer.customerType.type}}</td>
@@ -80,9 +80,15 @@
       <div class="card text-white bg-info mb-3">
         <div class="card-header">Information</div>
         <div class="card-body">
-          <h5 class="card-title">Info card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+          <h5 class="card-title">Customer Info</h5>
+<!--          <p class="card-text">{{newCustomer.customerName}}</p>-->
+<!--          <p class="card-text">{{newCustomer.customerDateOfBirth}}</p>-->
+<!--          <p class="card-text">{{newCustomer.customerGender}}</p>-->
+<!--          <p class="card-text">{{newCustomer.customerIdCard}}</p>-->
+<!--          <p class="card-text">{{newCustomer.customerPhone}}</p>-->
+<!--          <p class="card-text">{{newCustomer.customerEmail}}</p>-->
+<!--          <p class="card-text">{{newCustomer.customerType.type}}</p>-->
+<!--          <p class="card-text">{{newCustomer.customerAddress}}</p>-->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
