@@ -21,8 +21,8 @@
         <tr *ngFor="let customer of customerList;let i = index">
           <th scope="row">{{i + 1}}</th>
           <td>
-            <a type="button" data-bs-toggle="modal" data-bs-target="#infoModal" (click)="getCustomerById(customer.customerId)">
-              <i class="bi bi-info-circle-fill">
+            <a type="button" data-bs-toggle="modal" data-bs-target="#infoModal" (click)="sendCustomerToModal(customer)">
+              <i class="bi bi-info-circle-fill text-info">
                 {{customer.customerName}}
               </i>
             </a>
@@ -46,7 +46,8 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                    (click)="sendCustomerInfoToDelete(customer.customerName,customer.customerId)">
               <i class='bx bx-trash'></i>
             </button>
           </td>
@@ -56,46 +57,14 @@
     </div>
   </div>
 
-  <!--delete Modal -->
-  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="deleteModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Are You Sure ?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-danger">Delete !</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--info modal-->
-  <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="card text-white bg-info mb-3">
-        <div class="card-header">Information</div>
-        <div class="card-body">
-          <h5 class="card-title">Customer Info</h5>
-<!--          <p class="card-text">{{newCustomer.customerName}}</p>-->
-<!--          <p class="card-text">{{newCustomer.customerDateOfBirth}}</p>-->
-<!--          <p class="card-text">{{newCustomer.customerGender}}</p>-->
-<!--          <p class="card-text">{{newCustomer.customerIdCard}}</p>-->
-<!--          <p class="card-text">{{newCustomer.customerPhone}}</p>-->
-<!--          <p class="card-text">{{newCustomer.customerEmail}}</p>-->
-<!--          <p class="card-text">{{newCustomer.customerType.type}}</p>-->
-<!--          <p class="card-text">{{newCustomer.customerAddress}}</p>-->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!--delete modal-->
+  <app-customer-delete-modal
+    [customerName]="customerNameToDelete"
+    [customerId]="customerIdToDelete">
+  </app-customer-delete-modal>
+
+  <!--  info modal-->
+  <app-customer-detail-modal [customer]="customerPassToModal"></app-customer-detail-modal>
 
   <!-- Team Start -->
   <div class="container-xxl py-5">

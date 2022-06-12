@@ -8,7 +8,9 @@ import {Customer} from '../../model/Customer';
 })
 export class CustomerListComponent implements OnInit {
   customerList: Customer[] = [];
-  newCustomer: Customer = null;
+  customerPassToModal: Customer;
+  customerNameToDelete: string;
+  customerIdToDelete: number;
 
   constructor() {
     this.customerList.push({
@@ -58,13 +60,13 @@ export class CustomerListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  private getCustomerById(id: number) {
-    for (const customer of this.customerList) {
-      if (customer.customerId === id) {
-        this.newCustomer = customer;
-        break;
-      }
-    }
-    return this.newCustomer;
+  public sendCustomerInfoToDelete(name: string, id: number) {
+    this.customerNameToDelete = name;
+    this.customerIdToDelete = id;
+    console.log(this.customerNameToDelete);
+  }
+
+  public sendCustomerToModal(customer: Customer) {
+    this.customerPassToModal = customer;
   }
 }

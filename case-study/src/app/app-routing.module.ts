@@ -10,6 +10,9 @@ import {FacilitiesEditComponent} from './facilities/facilities-edit/facilities-e
 import {CustomerCreateComponent} from './customer/customer-create/customer-create.component';
 import {CustomerEditComponent} from './customer/customer-edit/customer-edit.component';
 import {ContractCreateComponent} from './contract/contract-create/contract-create.component';
+import {CustomerDeleteModalComponent} from './modal/customer-delete-modal/customer-delete-modal.component';
+import {CustomerDetailModalComponent} from './modal/customer-detail-modal/customer-detail-modal.component';
+import {FacilityDeleteModalComponent} from './modal/facility-delete-modal/facility-delete-modal.component';
 
 
 // const routes: Routes = [];
@@ -19,9 +22,12 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'facilities-list', component: FacilitiesListComponent},
   {path: 'facilities-edit', component: FacilitiesEditComponent},
+  {path: 'facilities-delete-modal', component: FacilityDeleteModalComponent},
   {path: 'customer-list', component: CustomerListComponent},
   {path: 'customer-create', component: CustomerCreateComponent},
   {path: 'customer-edit', component: CustomerEditComponent},
+  {path: 'customer-delete-modal', component: CustomerDeleteModalComponent},
+  {path: 'customer-detail-modal', component: CustomerDetailModalComponent},
   {path: 'contract-list', component: ContractListComponent},
   {path: 'contract-create', component: ContractCreateComponent},
 ];

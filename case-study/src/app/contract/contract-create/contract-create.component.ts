@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Customer} from '../../model/Customer';
 
 @Component({
@@ -9,6 +9,7 @@ import {Customer} from '../../model/Customer';
 export class ContractCreateComponent implements OnInit {
   constructor() {
   }
+
   ngOnInit(): void {
   }
 }
