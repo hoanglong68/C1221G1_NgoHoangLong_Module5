@@ -1,9 +1,9 @@
 <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="card text-dark bg-light mb-3">
-      <div class="card-header">Information</div>
+      <div class="card-header text-uppercase text-center">Information</div>
       <div class="card-body">
-        <h5 class="card-title">Customer Info</h5>
+        <h5 class="card-title text-success">Customer Info</h5>
                   <p class="card-text"><b>Name: </b>{{customer.customerName}}</p>
                   <p class="card-text"><b>Date Of Birth: </b>{{customer.customerDateOfBirth | date: "dd-MM-yyyy"}}</p>
                   <p class="card-text" *ngIf="customer.customerGender==1"><b>Gender: Male</b></p>

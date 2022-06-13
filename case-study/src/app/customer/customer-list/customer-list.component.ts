@@ -31,7 +31,7 @@ export class CustomerListComponent implements OnInit {
       customerId: 2,
       customerName: 'long2',
       customerDateOfBirth: '2000-01-01',
-      customerGender: 1,
+      customerGender: 0,
       customerIdCard: '1001',
       customerPhone: '0905123123',
       customerEmail: 'long2@gmail.com',
