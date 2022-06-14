@@ -11,7 +11,7 @@
   <div class="container-fluid bg-dark px-0">
     <div class="row gx-0">
       <div class="col-lg-3 bg-dark d-none d-lg-block">
-        <a [routerLink]="['/home']" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+        <a routerLink="'/home'" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
           <h1 class="m-0 text-primary text-uppercase">Furama</h1>
         </a>
       </div>
@@ -46,10 +46,10 @@
           </button>
           <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav mr-auto py-0">
-              <a [routerLink]="['/home']" class="nav-item nav-link ">Home</a>
-              <a [routerLink]="['/facilities-list']" class="nav-item nav-link">Facilities</a>
-              <a [routerLink]="['/customer-list']" class="nav-item nav-link">Customer</a>
-              <a [routerLink]="['/contract-list']" class="nav-item nav-link">Contract</a>
+              <a routerLink="/home" class="nav-item nav-link ">Home</a>
+              <a routerLink="/facilities-list" class="nav-item nav-link">Facilities</a>
+              <a routerLink="/customer-list" class="nav-item nav-link">Customer</a>
+              <a routerLink="/contract-list" class="nav-item nav-link">Contract</a>
               <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                 <div class="dropdown-menu rounded-0 m-0">

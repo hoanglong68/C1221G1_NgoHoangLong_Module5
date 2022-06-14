@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Customer} from '../../model/Customer';
+import {CustomerService} from '../../service/customer.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -11,53 +12,11 @@ export class CustomerListComponent implements OnInit {
   customerPassToModal: Customer;
   customerNameToDelete: string;
   customerIdToDelete: number;
-
-  constructor() {
-    this.customerList.push({
-      customerId: 1,
-      customerName: 'long1',
-      customerDateOfBirth: '2000-01-01',
-      customerGender: 1,
-      customerIdCard: '1001',
-      customerPhone: '0905123123',
-      customerEmail: 'long1@gmail.com',
-      customerType: {
-        id: 1,
-        type: 'diamond'
-      },
-      customerAddress: 'DN'
-    });
-    this.customerList.push({
-      customerId: 2,
-      customerName: 'long2',
-      customerDateOfBirth: '2000-01-01',
-      customerGender: 0,
-      customerIdCard: '1001',
-      customerPhone: '0905123123',
-      customerEmail: 'long2@gmail.com',
-      customerType: {
-        id: 1,
-        type: 'diamond'
-      },
-      customerAddress: 'DN'
-    });
-    this.customerList.push({
-      customerId: 3,
-      customerName: 'long3',
-      customerDateOfBirth: '2000-01-01',
-      customerGender: 1,
-      customerIdCard: '1001',
-      customerPhone: '0905123123',
-      customerEmail: 'long3@gmail.com',
-      customerType: {
-        id: 2,
-        type: 'platinum'
-      },
-      customerAddress: 'DN'
-    });
+  constructor(private customerService: CustomerService) {
   }
 
   ngOnInit(): void {
+    this.customerList = this.customerService.findAll();
   }
 
   public sendCustomerInfoToDelete(name: string, id: number) {
@@ -68,5 +27,10 @@ export class CustomerListComponent implements OnInit {
 
   public sendCustomerToModal(customer: Customer) {
     this.customerPassToModal = customer;
+  }
+
+ public deleteCustomer($event: number) {
+    this.customerService.deleteCustomerById($event);
+    this.ngOnInit();
   }
 }

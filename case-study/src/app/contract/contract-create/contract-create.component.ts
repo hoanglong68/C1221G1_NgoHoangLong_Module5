@@ -9,7 +9,6 @@ import {Customer} from '../../model/Customer';
 export class ContractCreateComponent implements OnInit {
   constructor() {
   }
-
   ngOnInit(): void {
   }
 }

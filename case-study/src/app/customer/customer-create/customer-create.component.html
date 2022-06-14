@@ -1,62 +1,64 @@
-<div class="container mt-5 mb-5 d-flex justify-content-center">
-  <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-    <h6 class="section-title text-center text-primary text-uppercase">
-      <div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-        </svg>
-      </div>
-    </h6>
-    <h1 class="mb-5">Customer <span class="text-primary text-uppercase">Create</span></h1>
-    <div class="card px-1 py-4">
-      <div class="card-body">
-        <h6 class="card-title mb-3 shadow text-info text-center">Please enter your information</h6>
-        <div class="row">
+<form [formGroup]="customerForm" (ngSubmit)="createCustomer()">
+  <div class="container mt-5 mb-5 d-flex justify-content-center">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h6 class="section-title text-center text-primary text-uppercase">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill"
+               viewBox="0 0 16 16">
+            <path
+              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill"
+               viewBox="0 0 16 16">
+            <path
+              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill"
+               viewBox="0 0 16 16">
+            <path
+              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill"
+               viewBox="0 0 16 16">
+            <path
+              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill"
+               viewBox="0 0 16 16">
+            <path
+              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg>
+        </div>
+      </h6>
+      <h1 class="mb-5">Customer <span class="text-primary text-uppercase">Create</span></h1>
+      <div class="card px-1 py-4">
+        <div class="card-body">
+          <h6 class="card-title mb-3 shadow text-info text-center">Please enter your information</h6>
           <div class="row">
             <div class="col-sm-12">
               <div class="form-group mb-4">
-                Id Card
-                <input class="form-control" type="number"></div>
+                Name
+                <input class="form-control" type="text" formControlName="customerName"></div>
+              <p style="color: red"
+                 *ngIf="customerForm.controls.customerName.hasError('required') && (customerForm.controls.customerName.touched || submit) ">
+                Name: Not Null !</p>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
               <div class="form-group mb-4">
-                Phone
-                <input class="form-control" type="number"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="form-group mb-4">
-                Email
-                <input class="form-control" type="text"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="form-group mb-4">
-                Address
-                <input class="form-control" type="text"></div>
+                Date Of Birth
+                <input class="form-control" type="date" formControlName="customerDateOfBirth"></div>
+              <p style="color: red"
+                 *ngIf="customerForm.controls.customerDateOfBirth.hasError('required') && (customerForm.controls.customerDateOfBirth.touched || submit)">
+                Date of Birth: Not Null !</p>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
               <div class="form-group">
-                <select class="form-select mb-4">
-                  <option selected>--Gender--</option>
+                Gender
+                <select class="form-select mb-4" formControlName="customerGender">
                   <option value="1">Male</option>
                   <option value="0">Female</option>
                 </select>
@@ -65,14 +67,60 @@
           </div>
           <div class="row">
             <div class="col-sm-12">
+              <div class="form-group mb-4">
+                Id Card
+                <input class="form-control" type="text" formControlName="customerIdCard"></div>
+              <p style="color: red"
+                 *ngIf="customerForm.controls.customerIdCard.hasError('required') && (customerForm.controls.customerIdCard.touched || submit)">
+                ID Card: Not Null !</p>
+              <p style="color: red" *ngIf="customerForm.controls.customerIdCard.hasError('pattern')">ID Card: xxx.. is number(9x or 12x)</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group mb-4">
+                Phone
+                <input class="form-control" type="text" formControlName="customerPhone"></div>
+              <p style="color: red"
+                 *ngIf="customerForm.controls.customerPhone.hasError('required') && (customerForm.controls.customerPhone.touched || submit)">
+                Phone: Not Null !</p>
+              <p style="color: red" *ngIf="customerForm.controls.customerPhone.hasError('pattern')">Phone: depend on
+                base:
+                090, 091, (84)+90, (84)+91 (7x)</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group mb-4">
+                Email
+                <input class="form-control" type="text" formControlName="customerEmail"></div>
+            </div>
+          </div>
+          <p style="color: red"
+             *ngIf="customerForm.controls.customerEmail.hasError('required') && (customerForm.controls.customerEmail.touched || submit)">
+            Email: Not Null !</p>
+          <p style="color: red" *ngIf="customerForm.controls.customerEmail.hasError('email')">Email: depend on base:
+            ...@...dot...</p>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group mb-4">
+                Address
+                <input class="form-control" type="text" formControlName="customerAddress"></div>
+            </div>
+          </div>
+          <p style="color: red"
+             *ngIf="customerForm.controls.customerAddress.hasError('required') && (customerForm.controls.customerAddress.touched || submit)">
+            Address: Not Null !</p>
+          <div class="row">
+            <div class="col-sm-12">
               <div class="form-group">
-                <select class="form-select mb-4">
-                  <option selected>--customerType--</option>
-                  <option value="Diamond">Diamond</option>
-                  <option value="Platinum">Platinum</option>
-                  <option value="Gold">Gold</option>
-                  <option value="Silver">Silver</option>
-                  <option value="Member">Member</option>
+                Customer Type
+                <select class="form-select mb-4" formControlName="customerType">
+                  <option value="1">Diamond</option>
+                  <option value="2">Platinum</option>
+                  <option value="3">Gold</option>
+                  <option value="4">Silver</option>
+                  <option value="5">Member</option>
                 </select>
               </div>
             </div>
@@ -84,4 +132,103 @@
       </div>
     </div>
   </div>
-</div>
+</form>
+<!-- Booking Start -->
+<!--<div class="container-xxl py-5">-->
+<!--  <div class="container">-->
+<!--    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">-->
+<!--      <h6 class="section-title text-center text-primary text-uppercase">Room Booking</h6>-->
+<!--      <h1 class="mb-5">Book A <span class="text-primary text-uppercase">Luxury Room</span></h1>-->
+<!--    </div>-->
+<!--    <div class="row g-5">-->
+<!--      <div class="col-lg-6">-->
+<!--        <div class="row g-3">-->
+<!--          <div class="col-6 text-end">-->
+<!--            <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="img/about-1.jpg" style="margin-top: 25%;">-->
+<!--          </div>-->
+<!--          <div class="col-6 text-start">-->
+<!--            <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="img/about-2.jpg">-->
+<!--          </div>-->
+<!--          <div class="col-6 text-end">-->
+<!--            <img class="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s" src="img/about-3.jpg">-->
+<!--          </div>-->
+<!--          <div class="col-6 text-start">-->
+<!--            <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s" src="img/about-4.jpg">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-lg-6">-->
+<!--        <div class="wow fadeInUp" data-wow-delay="0.2s">-->
+<!--          <form>-->
+<!--            <div class="row g-3">-->
+<!--              <div class="col-md-6">-->
+<!--                <div class="form-floating">-->
+<!--                  <input type="text" class="form-control" id="name" placeholder="Your Name">-->
+<!--                  <label for="name">Your Name</label>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-md-6">-->
+<!--                <div class="form-floating">-->
+<!--                  <input type="email" class="form-control" id="email" placeholder="Your Email">-->
+<!--                  <label for="email">Your Email</label>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-md-6">-->
+<!--                <div class="form-floating date" id="date3" data-target-input="nearest">-->
+<!--                  <input type="text" class="form-control datetimepicker-input" id="checkin" placeholder="Check In" data-target="#date3" data-toggle="datetimepicker" />-->
+<!--                  <label for="checkin">Check In</label>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-md-6">-->
+<!--                <div class="form-floating date" id="date4" data-target-input="nearest">-->
+<!--                  <input type="text" class="form-control datetimepicker-input" id="checkout" placeholder="Check Out" data-target="#date4" data-toggle="datetimepicker" />-->
+<!--                  <label for="checkout">Check Out</label>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-md-6">-->
+<!--                <div class="form-floating">-->
+<!--                  <select class="form-select" id="select1">-->
+<!--                    <option value="1">Adult 1</option>-->
+<!--                    <option value="2">Adult 2</option>-->
+<!--                    <option value="3">Adult 3</option>-->
+<!--                  </select>-->
+<!--                  <label for="select1">Select Adult</label>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-md-6">-->
+<!--                <div class="form-floating">-->
+<!--                  <select class="form-select" id="select2">-->
+<!--                    <option value="1">Child 1</option>-->
+<!--                    <option value="2">Child 2</option>-->
+<!--                    <option value="3">Child 3</option>-->
+<!--                  </select>-->
+<!--                  <label for="select2">Select Child</label>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-12">-->
+<!--                <div class="form-floating">-->
+<!--                  <select class="form-select" id="select3">-->
+<!--                    <option value="1">Room 1</option>-->
+<!--                    <option value="2">Room 2</option>-->
+<!--                    <option value="3">Room 3</option>-->
+<!--                  </select>-->
+<!--                  <label for="select3">Select A Room</label>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-12">-->
+<!--                <div class="form-floating">-->
+<!--                  <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>-->
+<!--                  <label for="message">Special Request</label>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-12">-->
+<!--                <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </form>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!-- Booking End -->

@@ -18,6 +18,7 @@ import {RouterModule} from '@angular/router';
 import { CustomerDeleteModalComponent } from './modal/customer-delete-modal/customer-delete-modal.component';
 import { CustomerDetailModalComponent } from './modal/customer-detail-modal/customer-detail-modal.component';
 import { FacilityDeleteModalComponent } from './modal/facility-delete-modal/facility-delete-modal.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { FacilityDeleteModalComponent } from './modal/facility-delete-modal/faci
     imports: [
         BrowserModule,
         RouterModule,
-      AppRoutingModule
+        AppRoutingModule,
+        ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

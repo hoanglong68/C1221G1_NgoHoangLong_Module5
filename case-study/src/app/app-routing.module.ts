@@ -25,7 +25,7 @@ const routes: Routes = [
   {path: 'facilities-delete-modal', component: FacilityDeleteModalComponent},
   {path: 'customer-list', component: CustomerListComponent},
   {path: 'customer-create', component: CustomerCreateComponent},
-  {path: 'customer-edit', component: CustomerEditComponent},
+  {path: 'customer-edit/:customerId', component: CustomerEditComponent},
   {path: 'customer-delete-modal', component: CustomerDeleteModalComponent},
   {path: 'customer-detail-modal', component: CustomerDetailModalComponent},
   {path: 'contract-list', component: ContractListComponent},
