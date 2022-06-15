@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Customer} from '../../model/Customer';
 import {CustomerService} from '../../service/customer.service';
+import {CustomerType} from '../../model/CustomerType';
 
 @Component({
   selector: 'app-customer-list',
@@ -9,17 +10,20 @@ import {CustomerService} from '../../service/customer.service';
 })
 export class CustomerListComponent implements OnInit {
   customerList: Customer[] = [];
+  customerTypeList: CustomerType[] = [];
   customerPassToModal: Customer;
   customerNameToDelete: string;
-  customerIdToDelete: number;
+  customerIdToDelete: string;
+
   constructor(private customerService: CustomerService) {
+    this.getCustomerTypeList();
   }
 
   ngOnInit(): void {
-    this.customerList = this.customerService.findAll();
+    this.getCustomerList();
   }
 
-  public sendCustomerInfoToDelete(name: string, id: number) {
+  public sendCustomerInfoToDelete(name: string, id: string) {
     this.customerNameToDelete = name;
     this.customerIdToDelete = id;
     console.log(this.customerNameToDelete);
@@ -29,8 +33,20 @@ export class CustomerListComponent implements OnInit {
     this.customerPassToModal = customer;
   }
 
- public deleteCustomer($event: number) {
+  public deleteCustomer($event: string) {
     this.customerService.deleteCustomerById($event);
     this.ngOnInit();
+  }
+
+  public getCustomerList() {
+    return this.customerService.getCustomerList().subscribe(customerList => {
+      this.customerList = customerList;
+    });
+  }
+
+  public getCustomerTypeList() {
+    return this.customerService.getCustomerTypeList().subscribe(customerTypeList => {
+      this.customerTypeList = customerTypeList;
+    });
   }
 }

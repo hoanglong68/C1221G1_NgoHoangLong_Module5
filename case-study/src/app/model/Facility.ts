@@ -13,4 +13,5 @@ export interface Facility {
   facilityDescriptionOtherConvenience?: string;
   facilityPoolArea?: number;
   facilityFloors?: number;
+  attachService?: string;
 }

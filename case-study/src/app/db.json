@@ -1,0 +1,225 @@
+{
+  "customerTypeList": [
+    {
+      "id": 1,
+      "customerType": "diamond"
+    },
+    {
+      "id": 2,
+      "customerType": "platinum"
+    },
+    {
+      "id": 3,
+      "customerType": "gold"
+    },
+    {
+      "id": 4,
+      "customerType": "silver"
+    },
+    {
+      "id": 5,
+      "customerType": "member"
+    }
+  ],
+  "rentTypeList": [
+    {
+      "id": 1,
+      "rentType": "year"
+    },
+    {
+      "id": 2,
+      "rentType": "month"
+    },
+    {
+      "id": 3,
+      "rentType": "day"
+    },
+    {
+      "id": 4,
+      "rentType": "hour"
+    }
+  ],
+  "facilityTypeList": [
+    {
+      "id": 1,
+      "type": "villa"
+    },
+    {
+      "id": 2,
+      "type": "house"
+    },
+    {
+      "id": 3,
+      "type": "room"
+    }
+  ],
+  "customerList": [
+    {
+      "customerId": "KH-0001",
+      "customerName": "long1",
+      "customerDateOfBirth": "2000-01-01",
+      "customerGender": 1,
+      "customerIdCard": "100111111",
+      "customerPhone": "0905123123",
+      "customerEmail": "long1@gmail.com",
+      "customerType": {
+        "id": 1,
+        "customerType": "diamond"
+      },
+      "customerAddress": "DN"
+    },
+    {
+      "customerId": "KH-0002",
+      "customerName": "long2",
+      "customerDateOfBirth": "2000-01-02",
+      "customerGender": 1,
+      "customerIdCard": "100111112",
+      "customerPhone": "0905123123",
+      "customerEmail": "long2@gmail.com",
+      "customerType": {
+        "id": 2,
+        "customerType": "platinum"
+      },
+      "customerAddress": "HN"
+    },
+    {
+      "customerId": "KH-0003",
+      "customerName": "long3",
+      "customerDateOfBirth": "2000-01-04",
+      "customerGender": 1,
+      "customerIdCard": "100111113",
+      "customerPhone": "0905123125",
+      "customerEmail": "long3@gmail.com",
+      "customerType": {
+        "id": 2,
+        "customerType": "platinum"
+      },
+      "customerAddress": "HN"
+    },
+    {
+      "customerId": "KH-0004",
+      "customerName": "long4",
+      "customerDateOfBirth": "2000-01-05",
+      "customerGender": 0,
+      "customerIdCard": "100111114",
+      "customerPhone": "0905123125",
+      "customerEmail": "long4@gmail.com",
+      "customerType": {
+        "id": 3,
+        "customerType": "gold"
+      },
+      "customerAddress": "HN"
+    },
+    {
+      "customerId": "KH-0005",
+      "customerName": "long5",
+      "customerDateOfBirth": "2000-01-06",
+      "customerGender": 1,
+      "customerIdCard": "100111115",
+      "customerPhone": "0905123126",
+      "customerEmail": "long5@gmail.com",
+      "customerType": {
+        "id": 3,
+        "customerType": "gold"
+      },
+      "customerAddress": "HCM"
+    }
+  ],
+  "facilityList": [
+    {
+      "facilityId": "VL-001",
+      "facilityName": "Villa Beach Front",
+      "facilityArea": 25000,
+      "facilityPrice": 30000,
+      "facilityMaxOfPeople": 10,
+      "facilityRentType": {
+        "id": 1,
+        "rentType": "year"
+      },
+      "facilityType": {
+        "id": 1,
+        "facilityType": "villa"
+      },
+      "facilityStandardRoom": "vip",
+      "facilityDescriptionOtherConvenience": "Pool",
+      "facilityPoolArea": 500,
+      "facilityFloors": 4
+    },
+    {
+      "facilityId": "HO-001",
+      "facilityName": "House Beach Front",
+      "facilityArea": 20000,
+      "facilityPrice": 20000,
+      "facilityMaxOfPeople": 7,
+      "facilityRentType": {
+        "id": 1,
+        "rentType": "year"
+      },
+      "facilityType": {
+        "id": 2,
+        "facilityType": "house"
+      },
+      "facilityStandardRoom": "vip",
+      "facilityDescriptionOtherConvenience": "Pool",
+      "facilityFloors": 4
+    },
+    {
+      "facilityId": "RO-001",
+      "facilityName": "Room Beach Front",
+      "facilityArea": 20000,
+      "facilityPrice": 12000,
+      "facilityMaxOfPeople": 2,
+      "facilityRentType": {
+        "id": 2,
+        "rentType": "month"
+      },
+      "facilityType": {
+        "id": 3,
+        "facilityType": "room"
+      },
+      "attachService": "massa"
+    }
+  ],
+  "contractList": [
+    {
+      "id": 1,
+      "startDate": "2021-12-08",
+      "endDate": "2021-13-08",
+      "deposit": 0,
+      "total": 1000000,
+      "customer": {
+        "customerId": "KH-0001",
+        "customerName": "long1",
+        "customerDateOfBirth": "2000-01-01",
+        "customerGender": 1,
+        "customerIdCard": "100111111",
+        "customerPhone": "0905123123",
+        "customerEmail": "long1@gmail.com",
+        "customerType": {
+          "id": 1,
+          "customerType": "diamond"
+        },
+        "customerAddress": "DN"
+      },
+      "facility": {
+        "facilityId": "VL-001",
+        "facilityName": "Villa Beach Front",
+        "facilityArea": 5000,
+        "facilityPrice": 15000,
+        "facilityMaxOfPeople": 10,
+        "facilityRentType": {
+          "id": 1,
+          "rentType": "year"
+        },
+        "facilityType": {
+          "id": 1,
+          "facilityType": "villa"
+        },
+        "facilityStandardRoom": "vip",
+        "facilityDescriptionOtherConvenience": "Pool",
+        "facilityPoolArea": 500,
+        "facilityFloors": 4
+      }
+    }
+  ]
+}

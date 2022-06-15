@@ -62,6 +62,9 @@
                   <option value="1">Male</option>
                   <option value="0">Female</option>
                 </select>
+                <p style="color: red"
+                   *ngIf="customerForm.controls.customerGender.hasError('required') && (customerForm.controls.customerGender.touched || submit)">
+                  Gender: Not Null !</p>
               </div>
             </div>
           </div>
@@ -122,6 +125,9 @@
                   <option value="4">Silver</option>
                   <option value="5">Member</option>
                 </select>
+                <p style="color: red"
+                   *ngIf="customerForm.controls.customerType.hasError('required') && (customerForm.controls.customerType.touched || submit)">
+                  Customer Type: Not Null !</p>
               </div>
             </div>
           </div>

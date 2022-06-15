@@ -13,7 +13,7 @@ export class CustomerCreateComponent implements OnInit {
   customerForm: FormGroup;
   submit = false;
 
-  constructor(private customerService: CustomerService) {
+  constructor(private customerService: CustomerService,private route: Router) {
     this.customerForm = new FormGroup({
       customerId: new FormControl('', [Validators.pattern(/^KH\\-\d{4}$/)]),
       customerName: new FormControl('', [Validators.required]),
@@ -35,6 +35,7 @@ export class CustomerCreateComponent implements OnInit {
     if (this.customerForm.valid) {
       console.log(this.customerForm);
       this.customerService.createCustomer(this.customerForm);
+      this.route.navigateByUrl('/customer/list');
     }
   }
 }
