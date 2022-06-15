@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {CustomerService} from '../../service/customer.service';
 import {Customer} from '../../model/Customer';
+import {CustomerType} from '../../model/CustomerType';
 
 @Component({
   selector: 'app-customer-edit',
@@ -12,9 +13,11 @@ import {Customer} from '../../model/Customer';
 export class CustomerEditComponent implements OnInit {
   confirmCustomer: Customer;
   customerForm: FormGroup;
+  customerTypeList: CustomerType[] = [];
   submit = false;
 
   constructor(private activatedRoute: ActivatedRoute, private customerService: CustomerService, private route: Router) {
+    this.getCustomerTypeList();
     activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       const customerId = paramMap.get('customerId');
       if (customerId != null) {
@@ -48,5 +51,11 @@ export class CustomerEditComponent implements OnInit {
       this.customerService.editCustomer(this.customerForm.value);
       this.route.navigateByUrl('/customer/list');
     }
+  }
+
+  public getCustomerTypeList() {
+    return this.customerService.getCustomerTypeList().subscribe(customerTypeList => {
+      this.customerTypeList = customerTypeList;
+    });
   }
 }

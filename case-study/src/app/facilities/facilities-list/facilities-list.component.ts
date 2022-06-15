@@ -15,6 +15,8 @@ export class FacilitiesListComponent implements OnInit {
   rentTypeList: RentType[] = [];
 
   constructor(private facilitiesService: FacilitiesService) {
+    this.getFacilityTypeList();
+    this.getRentTypeList();
   }
 
   ngOnInit(): void {
@@ -24,6 +26,18 @@ export class FacilitiesListComponent implements OnInit {
   public getFacilityList() {
     return this.facilitiesService.getFacilityList().subscribe(facilityList => {
       this.facilityList = facilityList;
+    });
+  }
+
+  public getFacilityTypeList() {
+    return this.facilitiesService.getFacilityTypeList().subscribe(facilityTypeList => {
+      this.facilityTypeList = facilityTypeList;
+    });
+  }
+
+  public getRentTypeList() {
+    return this.facilitiesService.getRentTypeList().subscribe(rentTypeList => {
+      this.rentTypeList = rentTypeList;
     });
   }
 }

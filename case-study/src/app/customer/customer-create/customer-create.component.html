@@ -36,29 +36,34 @@
           <h6 class="card-title mb-3 shadow text-info text-center">Please enter your information</h6>
           <div class="row">
             <div class="col-sm-12">
-              <div class="form-group mb-4">
-                Name
+              <div class="form-group mb-4 text-lg-start">
+                Name <span style="color: red"
+                           *ngIf="customerForm.controls.customerName.hasError('required') &&
+                           (customerForm.controls.customerName.touched || submit) ">
+                 Not Null !</span>
                 <input class="form-control" type="text" formControlName="customerName"></div>
-              <p style="color: red"
-                 *ngIf="customerForm.controls.customerName.hasError('required') && (customerForm.controls.customerName.touched || submit) ">
-                Name: Not Null !</p>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
-              <div class="form-group mb-4">
-                Date Of Birth
+              <div class="form-group mb-4 text-lg-start">
+                Date Of Birth <span style="color: red"
+                                    *ngIf="customerForm.controls.customerDateOfBirth.hasError('required') &&
+                                    (customerForm.controls.customerDateOfBirth.touched || submit)">
+                Not Null !</span>
                 <input class="form-control" type="date" formControlName="customerDateOfBirth"></div>
-              <p style="color: red"
-                 *ngIf="customerForm.controls.customerDateOfBirth.hasError('required') && (customerForm.controls.customerDateOfBirth.touched || submit)">
-                Date of Birth: Not Null !</p>
+
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
-              <div class="form-group">
-                Gender
+              <div class="form-group text-lg-start">
+                Gender <span style="color: red"
+                             *ngIf="customerForm.controls.customerGender.hasError('required') &&
+                           (customerForm.controls.customerGender.touched || submit)">
+                Not Null !</span>
                 <select class="form-select mb-4" formControlName="customerGender">
+                  <option value="">---select---</option>
                   <option value="1">Male</option>
                   <option value="0">Female</option>
                 </select>
@@ -67,60 +72,61 @@
           </div>
           <div class="row">
             <div class="col-sm-12">
-              <div class="form-group mb-4">
-                Id Card
+              <div class="form-group mb-4 text-lg-start">
+                Id Card <span style="color: red"
+                              *ngIf="customerForm.controls.customerIdCard.hasError('required') &&
+                           (customerForm.controls.customerIdCard.touched || submit)">
+                Not Null !</span>
+                <span style="color: red" *ngIf="customerForm.controls.customerIdCard.hasError('pattern')">xxx.. is
+                  number(9x or 12x)</span>
                 <input class="form-control" type="text" formControlName="customerIdCard"></div>
-              <p style="color: red"
-                 *ngIf="customerForm.controls.customerIdCard.hasError('required') && (customerForm.controls.customerIdCard.touched || submit)">
-                ID Card: Not Null !</p>
-              <p style="color: red" *ngIf="customerForm.controls.customerIdCard.hasError('pattern')">ID Card: xxx.. is number(9x or 12x)</p>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
-              <div class="form-group mb-4">
-                Phone
+              <div class="form-group mb-4 text-lg-start">
+                Phone <span style="color: red"
+                            *ngIf="customerForm.controls.customerPhone.hasError('required') &&
+                         (customerForm.controls.customerPhone.touched || submit)">
+                Not Null !</span>
+                <span style="color: red" *ngIf="customerForm.controls.customerPhone.hasError('pattern')">
+                  090, 091, (84)+90, (84)+91 (7x)</span>
                 <input class="form-control" type="text" formControlName="customerPhone"></div>
-              <p style="color: red"
-                 *ngIf="customerForm.controls.customerPhone.hasError('required') && (customerForm.controls.customerPhone.touched || submit)">
-                Phone: Not Null !</p>
-              <p style="color: red" *ngIf="customerForm.controls.customerPhone.hasError('pattern')">Phone: depend on
-                base:
-                090, 091, (84)+90, (84)+91 (7x)</p>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
-              <div class="form-group mb-4">
-                Email
+              <div class="form-group mb-4 text-lg-start">
+                Email <span style="color: red"
+                            *ngIf="customerForm.controls.customerEmail.hasError('required') &&
+                            (customerForm.controls.customerEmail.touched || submit)">
+                Not Null !</span>
+                <span style="color: red" *ngIf="customerForm.controls.customerEmail.hasError('email')">
+                  ...@...dot...</span>
                 <input class="form-control" type="text" formControlName="customerEmail"></div>
             </div>
           </div>
-          <p style="color: red"
-             *ngIf="customerForm.controls.customerEmail.hasError('required') && (customerForm.controls.customerEmail.touched || submit)">
-            Email: Not Null !</p>
-          <p style="color: red" *ngIf="customerForm.controls.customerEmail.hasError('email')">Email: depend on base:
-            ...@...dot...</p>
           <div class="row">
             <div class="col-sm-12">
-              <div class="form-group mb-4">
-                Address
+              <div class="form-group mb-4 text-lg-start">
+                Address <span style="color: red"
+                           *ngIf="customerForm.controls.customerAddress.hasError('required') &&
+                           (customerForm.controls.customerAddress.touched || submit)">
+                Not Null !</span>
                 <input class="form-control" type="text" formControlName="customerAddress"></div>
             </div>
           </div>
-          <p style="color: red"
-             *ngIf="customerForm.controls.customerAddress.hasError('required') && (customerForm.controls.customerAddress.touched || submit)">
-            Address: Not Null !</p>
+
           <div class="row">
             <div class="col-sm-12">
-              <div class="form-group">
-                Customer Type
+              <div class="form-group text-lg-start">
+                Customer Type <span style="color: red"
+                                    *ngIf="customerForm.controls.customerType.hasError('required') &&
+                           (customerForm.controls.customerType.touched || submit)">
+                Not Null !</span>
                 <select class="form-select mb-4" formControlName="customerType">
-                  <option value="1">Diamond</option>
-                  <option value="2">Platinum</option>
-                  <option value="3">Gold</option>
-                  <option value="4">Silver</option>
-                  <option value="5">Member</option>
+                  <option value="">---select---</option>
+                  <option *ngFor="let item of customerTypeList" value="{{item}}">{{item.customerType}}</option>
                 </select>
               </div>
             </div>

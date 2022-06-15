@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Customer} from '../model/Customer';
 import {FormGroup} from '@angular/forms';
-import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
@@ -25,7 +24,7 @@ export class CustomerService {
   }
 
   public getCustomerTypeList(): Observable<CustomerType[]> {
-    return this.http.get<CustomerType[]>(API_URL + 'customerTypeList');
+    return this.http.get<CustomerType[]>(API_URL + '/customerTypeList');
   }
 
   public createCustomer(customerForm: FormGroup) {

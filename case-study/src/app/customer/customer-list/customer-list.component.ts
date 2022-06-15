@@ -10,13 +10,11 @@ import {CustomerType} from '../../model/CustomerType';
 })
 export class CustomerListComponent implements OnInit {
   customerList: Customer[] = [];
-  customerTypeList: CustomerType[] = [];
   customerPassToModal: Customer;
   customerNameToDelete: string;
   customerIdToDelete: string;
 
   constructor(private customerService: CustomerService) {
-    this.getCustomerTypeList();
   }
 
   ngOnInit(): void {
@@ -41,12 +39,6 @@ export class CustomerListComponent implements OnInit {
   public getCustomerList() {
     return this.customerService.getCustomerList().subscribe(customerList => {
       this.customerList = customerList;
-    });
-  }
-
-  public getCustomerTypeList() {
-    return this.customerService.getCustomerTypeList().subscribe(customerTypeList => {
-      this.customerTypeList = customerTypeList;
     });
   }
 }

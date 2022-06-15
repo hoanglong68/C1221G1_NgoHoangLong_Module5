@@ -14,7 +14,12 @@ export class ContractListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.contractList = this.contractService.findAll();
+    this.getContractList();
   }
 
+  public getContractList() {
+    return this.contractService.getContractList().subscribe(contractList => {
+      this.contractList = contractList;
+    });
+  }
 }

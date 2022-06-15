@@ -24,4 +24,13 @@ export class FacilitiesService {
   public getFacilityList(): Observable<Facility[]> {
     return this.http.get<Facility[]>(API_URL + '/facilityList');
   }
+
+ public getFacilityTypeList(): Observable<FacilityType[]> {
+   return this.http.get<FacilityType[]>(API_URL + '/facilityTypeList');
+
+ }
+
+ public getRentTypeList(): Observable<RentType[]> {
+   return this.http.get<RentType[]>(API_URL + '/rentTypeList');
+ }
 }

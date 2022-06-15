@@ -8,7 +8,7 @@ import {CustomerEditComponent} from './customer-edit/customer-edit.component';
 import {CustomerDeleteModalComponent} from './customer-delete-modal/customer-delete-modal.component';
 import {CustomerDetailModalComponent} from './customer-detail-modal/customer-detail-modal.component';
 import {AppRoutingModule} from '../app-routing.module';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +22,8 @@ import {ReactiveFormsModule} from '@angular/forms';
   imports: [
     CommonModule,
     CustomerRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class CustomerModule { }
