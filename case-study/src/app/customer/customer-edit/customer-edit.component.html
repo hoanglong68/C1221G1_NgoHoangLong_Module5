@@ -1,133 +1,144 @@
-<form [formGroup]="customerForm" (ngSubmit)="editCustomer()">
-  <div class="container mt-5 mb-5 d-flex justify-content-center">
-    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-      <h6 class="section-title text-center text-primary text-uppercase">
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill"
-               viewBox="0 0 16 16">
-            <path
-              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill"
-               viewBox="0 0 16 16">
-            <path
-              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill"
-               viewBox="0 0 16 16">
-            <path
-              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill"
-               viewBox="0 0 16 16">
-            <path
-              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill"
-               viewBox="0 0 16 16">
-            <path
-              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-          </svg>
-        </div>
-      </h6>
-      <h1 class="mb-5">Customer <span class="text-primary text-uppercase">Edit</span></h1>
+<div class="container mt-5 mb-5 d-flex justify-content-center">
+  <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+    <h6 class="section-title text-center text-primary text-uppercase">
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill"
+             viewBox="0 0 16 16">
+          <path
+            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill"
+             viewBox="0 0 16 16">
+          <path
+            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill"
+             viewBox="0 0 16 16">
+          <path
+            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill"
+             viewBox="0 0 16 16">
+          <path
+            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill"
+             viewBox="0 0 16 16">
+          <path
+            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+      </div>
+    </h6>
+    <h1 class="mb-5">Customer <span class="text-primary text-uppercase">Edit</span></h1>
+    <form [formGroup]="customerEditForm" *ngIf="customerEditForm" (ngSubmit)="editCustomer()">
       <div class="card px-1 py-4">
         <div class="card-body">
+          <h3 class="mb-5">Customer: <span class="text-primary text-uppercase">{{confirmCustomer.id}}</span></h3>
           <h6 class="card-title mb-3 shadow text-info text-center">Please enter your information</h6>
+          <div class="row" hidden>
+            <div class="col-sm-12">
+              <div class="form-group mb-4 text-lg-start">
+                Id <span style="color: red"
+                         *ngIf="customerEditForm.controls.id.hasError('required') &&
+                           (customerEditForm.controls.id.touched || submit)">
+                Not Null !</span>
+                <span style="color: red" *ngIf="customerEditForm.controls.id.hasError('pattern')">
+                  KH-XXXX(x is number)</span>
+                <input class="form-control" type="text" formControlName="id" placeholder="KH-XXXX"></div>
+            </div>
+          </div>
           <div class="row">
             <div class="col-sm-12">
-              <div class="form-group mb-4">
-                Name
+              <div class="form-group mb-4 text-lg-start">
+                Name <span style="color: red"
+                           *ngIf="customerEditForm.controls.customerName.hasError('required') &&
+                           (customerEditForm.controls.customerName.touched || submit) ">
+                 Not Null !</span>
                 <input class="form-control" type="text" formControlName="customerName"></div>
-              <p style="color: red"
-                 *ngIf="customerForm.controls.customerName.hasError('required') && (customerForm.controls.customerName.touched || submit) ">
-                Name: Not Null !</p>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
-              <div class="form-group mb-4">
-                Date Of Birth
+              <div class="form-group mb-4 text-lg-start">
+                Date Of Birth <span style="color: red"
+                                    *ngIf="customerEditForm.controls.customerDateOfBirth.hasError('required') &&
+                                    (customerEditForm.controls.customerDateOfBirth.touched || submit)">
+                Not Null !</span>
                 <input class="form-control" type="date" formControlName="customerDateOfBirth"></div>
-              <p style="color: red"
-                 *ngIf="customerForm.controls.customerDateOfBirth.hasError('required') && (customerForm.controls.customerDateOfBirth.touched || submit)">
-                Date of Birth: Not Null !</p>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
-              <div class="form-group">
-                Gender
+              <div class="form-group text-lg-start">
+                Gender <span style="color: red"
+                             *ngIf="customerEditForm.controls.customerGender.hasError('required') &&
+                           (customerEditForm.controls.customerGender.touched || submit)">
+                Not Null !</span>
                 <select class="form-select mb-4" formControlName="customerGender">
+                  <option value="">---select---</option>
                   <option value="1">Male</option>
                   <option value="0">Female</option>
                 </select>
-                <p style="color: red"
-                   *ngIf="customerForm.controls.customerGender.hasError('required') && (customerForm.controls.customerGender.touched || submit)">
-                  Gender: Not Null !</p>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
-              <div class="form-group mb-4">
-                Id Card
+              <div class="form-group mb-4 text-lg-start">
+                Id Card <span style="color: red"
+                              *ngIf="customerEditForm.controls.customerIdCard.hasError('required') &&
+                           (customerEditForm.controls.customerIdCard.touched || submit)">
+                Not Null !</span>
+                <span style="color: red" *ngIf="customerEditForm.controls.customerIdCard.hasError('pattern')">xxx.. is
+                  number(9x or 12x)</span>
                 <input class="form-control" type="text" formControlName="customerIdCard"></div>
-              <p style="color: red"
-                 *ngIf="customerForm.controls.customerIdCard.hasError('required') && (customerForm.controls.customerIdCard.touched || submit)">
-                ID Card: Not Null !</p>
-              <p style="color: red" *ngIf="customerForm.controls.customerIdCard.hasError('pattern')">ID Card: xxx.. is number(9x or 12x)</p>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
-              <div class="form-group mb-4">
-                Phone
+              <div class="form-group mb-4 text-lg-start">
+                Phone <span style="color: red"
+                            *ngIf="customerEditForm.controls.customerPhone.hasError('required') &&
+                         (customerEditForm.controls.customerPhone.touched || submit)">
+                Not Null !</span>
+                <span style="color: red" *ngIf="customerEditForm.controls.customerPhone.hasError('pattern')">
+                  090, 091, (84)+90, (84)+91 (7x)</span>
                 <input class="form-control" type="text" formControlName="customerPhone"></div>
-              <p style="color: red"
-                 *ngIf="customerForm.controls.customerPhone.hasError('required') && (customerForm.controls.customerPhone.touched || submit)">
-                Phone: Not Null !</p>
-              <p style="color: red" *ngIf="customerForm.controls.customerPhone.hasError('pattern')">Phone: depend on
-                base:
-                090, 091, (84)+90, (84)+91 (7x)</p>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
-              <div class="form-group mb-4">
-                Email
+              <div class="form-group mb-4 text-lg-start">
+                Email <span style="color: red"
+                            *ngIf="customerEditForm.controls.customerEmail.hasError('required') &&
+                            (customerEditForm.controls.customerEmail.touched || submit)">
+                Not Null !</span>
+                <span style="color: red" *ngIf="customerEditForm.controls.customerEmail.hasError('email')">
+                  ...@...dot...</span>
                 <input class="form-control" type="text" formControlName="customerEmail"></div>
             </div>
           </div>
-          <p style="color: red"
-             *ngIf="customerForm.controls.customerEmail.hasError('required') && (customerForm.controls.customerEmail.touched || submit)">
-            Email: Not Null !</p>
-          <p style="color: red" *ngIf="customerForm.controls.customerEmail.hasError('email')">Email: depend on base:
-            ...@...dot...</p>
           <div class="row">
             <div class="col-sm-12">
-              <div class="form-group mb-4">
-                Address
+              <div class="form-group mb-4 text-lg-start">
+                Address <span style="color: red"
+                              *ngIf="customerEditForm.controls.customerAddress.hasError('required') &&
+                           (customerEditForm.controls.customerAddress.touched || submit)">
+                Not Null !</span>
                 <input class="form-control" type="text" formControlName="customerAddress"></div>
             </div>
           </div>
-          <p style="color: red"
-             *ngIf="customerForm.controls.customerAddress.hasError('required') && (customerForm.controls.customerAddress.touched || submit)">
-            Address: Not Null !</p>
           <div class="row">
             <div class="col-sm-12">
-              <div class="form-group">
-                Customer Type
-                <select class="form-select mb-4" formControlName="customerType">
-                  <option value="1">Diamond</option>
-                  <option value="2">Platinum</option>
-                  <option value="3">Gold</option>
-                  <option value="4">Silver</option>
-                  <option value="5">Member</option>
+              <div class="form-group text-lg-start">
+                Customer Type <span style="color: red"
+                                    *ngIf="customerEditForm.controls.customerType.hasError('required') &&
+                           (customerEditForm.controls.customerType.touched || submit)">
+                Not Null !</span>
+                <select class="form-select mb-4" formControlName="customerType" [compareWith]="compareFn">
+                  <option value="">---select---</option>
+                  <option *ngFor="let item of customerTypeList" [ngValue]="item">{{item.customerType}}</option>
                 </select>
-                <p style="color: red"
-                   *ngIf="customerForm.controls.customerType.hasError('required') && (customerForm.controls.customerType.touched || submit)">
-                  Customer Type: Not Null !</p>
               </div>
             </div>
           </div>
@@ -136,6 +147,6 @@
           <button class="btn btn-primary btn-block confirm-button" type="submit">Edit Customer</button>
         </div>
       </div>
-    </div>
+    </form>
   </div>
-</form>
+</div>

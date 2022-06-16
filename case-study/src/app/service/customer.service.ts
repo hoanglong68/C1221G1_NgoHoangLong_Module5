@@ -27,29 +27,19 @@ export class CustomerService {
     return this.http.get<CustomerType[]>(API_URL + '/customerTypeList');
   }
 
-  public createCustomer(customerForm: FormGroup) {
-    if (customerForm.valid) {
-      this.customerList.push(customerForm.value);
-    }
+  public saveCustomer(customer): Observable<Customer> {
+    return this.http.post<Customer>(API_URL + '/customerList', customer);
   }
 
-  public deleteCustomerById(customerId: string) {
-    this.customerList = this.customerList.filter(customer => customer.customerId !== customerId);
+  public deleteCustomer(id: string): Observable<Customer> {
+    return this.http.delete<Customer>(`${API_URL}/customerList/${id}`);
   }
 
-  public findById(id: string) {
-    for (const customer of this.customerList) {
-      if (customer.customerId === id) {
-        return customer;
-      }
-    }
-    return undefined;
+  findById(id: string): Observable<Customer> {
+    return this.http.get<Customer>(`${API_URL}/customerList/${id}`);
   }
 
-  public editCustomer(customer: Customer) {
-    const indexToDelete = this.customerList.findIndex(item => item.customerId === customer.customerId);
-    if (indexToDelete !== -1) {
-      this.customerList[indexToDelete] = customer;
-    }
+  updateCustomer(id: string, customer: Customer): Observable<Customer> {
+    return this.http.put<Customer>(`${API_URL}/customerList/${id}`, customer);
   }
 }

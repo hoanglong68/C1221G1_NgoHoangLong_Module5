@@ -12,20 +12,42 @@ import {CustomerType} from '../../model/CustomerType';
 })
 export class CustomerEditComponent implements OnInit {
   confirmCustomer: Customer;
-  customerForm: FormGroup;
+  customerEditForm: FormGroup;
   customerTypeList: CustomerType[] = [];
+  id?: string;
   submit = false;
 
   constructor(private activatedRoute: ActivatedRoute, private customerService: CustomerService, private route: Router) {
+  }
+
+  ngOnInit(): void {
     this.getCustomerTypeList();
-    activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
-      const customerId = paramMap.get('customerId');
-      if (customerId != null) {
-        this.confirmCustomer = this.customerService.findById(customerId);
-      }
+    this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
+      this.id = paramMap.get('id');
+      this.getCustomer(this.id);
+      console.log(this.confirmCustomer.id);
     });
-    this.customerForm = new FormGroup({
-      customerId: new FormControl(this.confirmCustomer.customerId, [Validators.pattern(/^KH\-\d{4}$/)]),
+  }
+
+  public editCustomer() {
+    this.submit = true;
+    console.log(this.customerEditForm);
+    if (this.customerEditForm.valid) {
+      this.customerService.updateCustomer(this.confirmCustomer.id, this.customerEditForm.value).subscribe(() => {
+        this.route.navigateByUrl('/customer/list');
+      });
+    }
+  }
+
+  public getCustomerTypeList() {
+    return this.customerService.getCustomerTypeList().subscribe(customerTypeList => {
+      this.customerTypeList = customerTypeList;
+    });
+  }
+
+  public syncCustomer() {
+    this.customerEditForm = new FormGroup({
+      id: new FormControl(this.confirmCustomer.id, [Validators.pattern(/^KH\-\d{4}$/)]),
       customerName: new FormControl(this.confirmCustomer.customerName, [Validators.required]),
       customerDateOfBirth: new FormControl(this.confirmCustomer.customerDateOfBirth,
         [Validators.required, Validators.pattern(/^\d{4}\-\d{2}\-\d{2}$/)]),
@@ -41,21 +63,14 @@ export class CustomerEditComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
-
-  public editCustomer() {
-    this.submit = true;
-    console.log(this.customerForm);
-    if (this.customerForm.valid) {
-      this.customerService.editCustomer(this.customerForm.value);
-      this.route.navigateByUrl('/customer/list');
-    }
-  }
-
-  public getCustomerTypeList() {
-    return this.customerService.getCustomerTypeList().subscribe(customerTypeList => {
-      this.customerTypeList = customerTypeList;
+  public getCustomer(id: string) {
+    return this.customerService.findById(id).subscribe(customer => {
+      this.confirmCustomer = customer;
+      this.syncCustomer();
     });
+  }
+
+  compareFn(t1, t2): boolean {
+    return t1 && t2 ? t1.customerType === t2.customerType : t1 === t2;
   }
 }

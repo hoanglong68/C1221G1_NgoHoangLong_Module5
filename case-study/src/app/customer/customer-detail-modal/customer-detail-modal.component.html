@@ -4,15 +4,16 @@
       <div class="card-header text-uppercase text-center">Information</div>
       <div class="card-body">
         <h5 class="card-title text-success">Customer Info</h5>
-                  <p class="card-text"><b>Name: </b>{{customer?.customerName}}</p>
-                  <p class="card-text"><b>Date Of Birth: </b>{{customer?.customerDateOfBirth | date: "dd-MM-yyyy"}}</p>
-                  <p class="card-text" *ngIf="customer?.customerGender==1"><b>Gender: Male</b></p>
-                  <p class="card-text" *ngIf="customer?.customerGender==0"><b>Gender: Female</b></p>
-                  <p class="card-text"><b>Id Card: </b>{{customer?.customerIdCard}}</p>
-                  <p class="card-text"><b>Phone: </b>{{customer?.customerPhone}}</p>
-                  <p class="card-text"><b>Email: </b>{{customer?.customerEmail}}</p>
-                  <p class="card-text"><b>Type: </b>{{customer?.customerType.type}}</p>
-                  <p class="card-text"><b>Address: </b>{{customer?.customerAddress}}</p>
+        <p class="card-text"><b>Code: </b>{{customer?.id}}</p>
+        <p class="card-text"><b>Name: </b>{{customer?.customerName}}</p>
+        <p class="card-text"><b>Date Of Birth: </b>{{customer?.customerDateOfBirth | date: "dd-MM-yyyy"}}</p>
+        <p class="card-text" *ngIf="customer?.customerGender==1"><b>Gender: Male</b></p>
+        <p class="card-text" *ngIf="customer?.customerGender==0"><b>Gender: Female</b></p>
+        <p class="card-text"><b>Id Card: </b>{{customer?.customerIdCard}}</p>
+        <p class="card-text"><b>Phone: </b>{{customer?.customerPhone}}</p>
+        <p class="card-text"><b>Email: </b>{{customer?.customerEmail}}</p>
+        <p class="card-text"><b>Type: </b>{{customer?.customerType.customerType}}</p>
+        <p class="card-text"><b>Address: </b>{{customer?.customerAddress}}</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>

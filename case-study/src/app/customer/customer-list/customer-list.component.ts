@@ -13,6 +13,7 @@ export class CustomerListComponent implements OnInit {
   customerPassToModal: Customer;
   customerNameToDelete: string;
   customerIdToDelete: string;
+  page: string | number = 0;
 
   constructor(private customerService: CustomerService) {
   }
@@ -24,7 +25,6 @@ export class CustomerListComponent implements OnInit {
   public sendCustomerInfoToDelete(name: string, id: string) {
     this.customerNameToDelete = name;
     this.customerIdToDelete = id;
-    console.log(this.customerNameToDelete);
   }
 
   public sendCustomerToModal(customer: Customer) {
@@ -32,8 +32,9 @@ export class CustomerListComponent implements OnInit {
   }
 
   public deleteCustomer($event: string) {
-    this.customerService.deleteCustomerById($event);
-    this.ngOnInit();
+    this.customerService.deleteCustomer($event).subscribe(() => {
+      this.ngOnInit();
+    });
   }
 
   public getCustomerList() {

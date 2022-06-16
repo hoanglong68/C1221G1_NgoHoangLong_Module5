@@ -55,7 +55,7 @@
   ],
   "customerList": [
     {
-      "customerId": "KH-0001",
+      "id": "KH-0001",
       "customerName": "long1",
       "customerDateOfBirth": "2000-01-01",
       "customerGender": 1,
@@ -69,7 +69,7 @@
       "customerAddress": "DN"
     },
     {
-      "customerId": "KH-0002",
+      "id": "KH-0002",
       "customerName": "long2",
       "customerDateOfBirth": "2000-01-02",
       "customerGender": 1,
@@ -83,7 +83,7 @@
       "customerAddress": "HN"
     },
     {
-      "customerId": "KH-0003",
+      "id": "KH-0003",
       "customerName": "long3",
       "customerDateOfBirth": "2000-01-04",
       "customerGender": 1,
@@ -97,37 +97,37 @@
       "customerAddress": "HN"
     },
     {
-      "customerId": "KH-0004",
-      "customerName": "long4",
-      "customerDateOfBirth": "2000-01-05",
-      "customerGender": 0,
-      "customerIdCard": "100111114",
-      "customerPhone": "0905123125",
-      "customerEmail": "long4@gmail.com",
+      "id": "KH-1234",
+      "customerName": "1",
+      "customerDateOfBirth": "2022-06-07",
+      "customerGender": "1",
+      "customerIdCard": "111111111",
+      "customerPhone": "0901231231",
+      "customerEmail": "a2@a",
       "customerType": {
-        "id": 3,
-        "customerType": "gold"
+        "id": 1,
+        "customerType": "diamond"
       },
-      "customerAddress": "HN"
+      "customerAddress": "1"
     },
     {
-      "customerId": "KH-0005",
-      "customerName": "long5",
-      "customerDateOfBirth": "2000-01-06",
-      "customerGender": 1,
-      "customerIdCard": "100111115",
-      "customerPhone": "0905123126",
-      "customerEmail": "long5@gmail.com",
+      "id": "KH-1231",
+      "customerName": "2aaa",
+      "customerDateOfBirth": "2022-07-08",
+      "customerGender": "0",
+      "customerIdCard": "111111111",
+      "customerPhone": "0911111111",
+      "customerEmail": "a@a",
       "customerType": {
-        "id": 3,
-        "customerType": "gold"
+        "id": 5,
+        "customerType": "member"
       },
-      "customerAddress": "HCM"
+      "customerAddress": "1"
     }
   ],
   "facilityList": [
     {
-      "facilityId": "VL-001",
+      "id": "VL-001",
       "facilityName": "Villa Beach Front",
       "facilityArea": 25000,
       "facilityPrice": 30000,
@@ -146,7 +146,7 @@
       "facilityFloors": 4
     },
     {
-      "facilityId": "HO-001",
+      "id": "HO-001",
       "facilityName": "House Beach Front",
       "facilityArea": 20000,
       "facilityPrice": 20000,
@@ -164,7 +164,7 @@
       "facilityFloors": 4
     },
     {
-      "facilityId": "RO-001",
+      "id": "RO-001",
       "facilityName": "Room Beach Front",
       "facilityArea": 20000,
       "facilityPrice": 12000,
@@ -202,7 +202,7 @@
         "customerAddress": "DN"
       },
       "facility": {
-        "facilityId": "VL-001",
+        "id": "VL-001",
         "facilityName": "Villa Beach Front",
         "facilityArea": 5000,
         "facilityPrice": 15000,
