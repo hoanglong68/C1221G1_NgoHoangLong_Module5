@@ -25,8 +25,5 @@ export class CustomerDeleteModalComponent implements OnInit {
     console.log(this.id);
     console.log(this.customerName);
     this.emitId.emit(this.id);
-    // this.customerService.deleteCustomer(this.id).subscribe(() => {
-    //   this.router.navigateByUrl('/customer/list');
-    // });
   }
 }

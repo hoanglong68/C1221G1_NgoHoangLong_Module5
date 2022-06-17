@@ -33,18 +33,18 @@
     <form [formGroup]="customerEditForm" *ngIf="customerEditForm" (ngSubmit)="editCustomer()">
       <div class="card px-1 py-4">
         <div class="card-body">
-          <h3 class="mb-5">Customer: <span class="text-primary text-uppercase">{{confirmCustomer.id}}</span></h3>
+          <h3 class="mb-5">Customer: <span class="text-primary text-uppercase">{{confirmCustomer.customerId}}</span></h3>
           <h6 class="card-title mb-3 shadow text-info text-center">Please enter your information</h6>
           <div class="row" hidden>
             <div class="col-sm-12">
               <div class="form-group mb-4 text-lg-start">
                 Id <span style="color: red"
-                         *ngIf="customerEditForm.controls.id.hasError('required') &&
-                           (customerEditForm.controls.id.touched || submit)">
+                         *ngIf="customerEditForm.controls.customerCode.hasError('required') &&
+                           (customerEditForm.controls.customerCode.touched || submit)">
                 Not Null !</span>
-                <span style="color: red" *ngIf="customerEditForm.controls.id.hasError('pattern')">
+                <span style="color: red" *ngIf="customerEditForm.controls.customerCode.hasError('pattern')">
                   KH-XXXX(x is number)</span>
-                <input class="form-control" type="text" formControlName="id" placeholder="KH-XXXX"></div>
+                <input class="form-control" type="text" formControlName="customerId" placeholder="KH-XXXX"></div>
             </div>
           </div>
           <div class="row">
@@ -137,7 +137,7 @@
                 Not Null !</span>
                 <select class="form-select mb-4" formControlName="customerType" [compareWith]="compareFn">
                   <option value="">---select---</option>
-                  <option *ngFor="let item of customerTypeList" [ngValue]="item">{{item.customerType}}</option>
+                  <option *ngFor="let item of customerTypeList" [ngValue]="item">{{item.customerTypeName}}</option>
                 </select>
               </div>
             </div>

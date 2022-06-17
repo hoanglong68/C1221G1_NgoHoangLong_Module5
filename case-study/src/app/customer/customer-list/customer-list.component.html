@@ -54,6 +54,12 @@
         </tr>
         </thead>
         <tbody>
+        <tr *ngIf="customerList.length == 0">
+          <td class="text-center" colspan="6">
+            <h1 class="text-uppercase">No data</h1>
+          </td>
+        </tr>
+<!--        |paginate : { itemsPerPage: 2, currentPage: page };-->
         <tr *ngFor="let customer of customerList|paginate : { itemsPerPage: 2, currentPage: page };let i = index">
           <th scope="row">{{i + 1}}</th>
           <td>
@@ -78,9 +84,9 @@
                     d="M8 1a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM3 5a5 5 0 1 1 5.5 4.975V12h2a.5.5 0 0 1 0 1h-2v2.5a.5.5 0 0 1-1 0V13h-2a.5.5 0 0 1 0-1h2V9.975A5 5 0 0 1 3 5z"/>
             </svg>
           </td>
-          <td>{{customer.customerType.customerType}}</td>
+          <td>{{customer.customerType.customerTypeName}}</td>
           <td>
-            <button class="btn btn-warning" [routerLink]="['/customer/edit',customer.id]">
+            <button class="btn btn-warning" [routerLink]="['/customer/edit',customer.customerId]">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                    class="bi bi-gear" viewBox="0 0 16 16">
                 <path
@@ -92,7 +98,7 @@
           </td>
           <td>
             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"
-                    (click)="sendCustomerInfoToDelete(customer.customerName,customer.id)">
+                    (click)="sendCustomerInfoToDelete(customer.customerName,customer.customerId)">
               <i class='bx bx-trash'></i>
             </button>
           </td>

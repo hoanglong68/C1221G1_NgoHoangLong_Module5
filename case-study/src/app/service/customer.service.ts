@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Customer} from '../model/Customer';
-import {FormGroup} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
@@ -20,26 +19,26 @@ export class CustomerService {
   }
 
   public getCustomerList(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(API_URL + '/customerList');
+    return this.http.get<Customer[]>(API_URL + '/api/customer' + '/customerList');
   }
 
   public getCustomerTypeList(): Observable<CustomerType[]> {
-    return this.http.get<CustomerType[]>(API_URL + '/customerTypeList');
+    return this.http.get<CustomerType[]>(API_URL + '/api/customer' + '/customerTypeList');
   }
 
   public saveCustomer(customer): Observable<Customer> {
-    return this.http.post<Customer>(API_URL + '/customerList', customer);
+    return this.http.post<Customer>(API_URL + '/api/customer' + '/customerCreate', customer);
   }
 
   public deleteCustomer(id: string): Observable<Customer> {
-    return this.http.delete<Customer>(`${API_URL}/customerList/${id}`);
+    return this.http.delete<Customer>(`${API_URL}/api/customer/customerDelete/${id}`);
   }
 
-  findById(id: string): Observable<Customer> {
-    return this.http.get<Customer>(`${API_URL}/customerList/${id}`);
+  public findById(id: string): Observable<Customer> {
+    return this.http.get<Customer>(`${API_URL}/api/customer/customerBy/${id}`);
   }
 
   updateCustomer(id: string, customer: Customer): Observable<Customer> {
-    return this.http.put<Customer>(`${API_URL}/customerList/${id}`, customer);
+    return this.http.put<Customer>(`${API_URL}/api/customer/customerEdit/${id}`, customer);
   }
 }

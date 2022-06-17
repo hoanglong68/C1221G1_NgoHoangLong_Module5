@@ -15,8 +15,12 @@ export class CustomerCreateComponent implements OnInit {
   submit = false;
 
   constructor(private customerService: CustomerService, private route: Router) {
+  }
+
+  ngOnInit(): void {
     this.customerForm = new FormGroup({
-      id: new FormControl('', [Validators.pattern(/^KH\-\d{4}$/)]),
+      customerId: new FormControl(''),
+      customerCode: new FormControl('', [Validators.pattern(/^KH\-\d{4}$/)]),
       customerName: new FormControl('', [Validators.required]),
       customerDateOfBirth: new FormControl('', [Validators.required, Validators.pattern(/^\d{4}\-\d{2}\-\d{2}$/)]),
       customerGender: new FormControl('', [Validators.required]),
@@ -27,10 +31,6 @@ export class CustomerCreateComponent implements OnInit {
       customerAddress: new FormControl('', [Validators.required]),
     });
     this.getCustomerTypeList();
-    console.log(this.customerTypeList.length);
-  }
-
-  ngOnInit(): void {
   }
 
   public createCustomer() {
@@ -50,6 +50,7 @@ export class CustomerCreateComponent implements OnInit {
 
   public getCustomerTypeList() {
     return this.customerService.getCustomerTypeList().subscribe(customerTypeList => {
+      console.log(customerTypeList);
       this.customerTypeList = customerTypeList;
     });
   }

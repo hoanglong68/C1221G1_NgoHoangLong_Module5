@@ -42,15 +42,15 @@
   "facilityTypeList": [
     {
       "id": 1,
-      "type": "villa"
+      "facilityType": "villa"
     },
     {
       "id": 2,
-      "type": "house"
+      "facilityType": "house"
     },
     {
       "id": 3,
-      "type": "room"
+      "facilityType": "room"
     }
   ],
   "customerList": [
@@ -164,20 +164,77 @@
       "facilityFloors": 4
     },
     {
-      "id": "RO-001",
-      "facilityName": "Room Beach Front",
+      "id": "HO-001",
+      "facilityName": "House Beach Front",
       "facilityArea": 20000,
-      "facilityPrice": 12000,
-      "facilityMaxOfPeople": 2,
+      "facilityPrice": 20000,
+      "facilityMaxOfPeople": 7,
       "facilityRentType": {
-        "id": 2,
-        "rentType": "month"
+        "id": 1,
+        "rentType": "year"
       },
       "facilityType": {
-        "id": 3,
-        "facilityType": "room"
+        "id": 2,
+        "facilityType": "house"
       },
-      "attachService": "massa"
+      "facilityStandardRoom": "vip",
+      "facilityDescriptionOtherConvenience": "Pool",
+      "facilityFloors": 4
+    },
+    {
+      "id": "HO-001",
+      "facilityName": "House Beach Front",
+      "facilityArea": 20000,
+      "facilityPrice": 20000,
+      "facilityMaxOfPeople": 7,
+      "facilityRentType": {
+        "id": 1,
+        "rentType": "year"
+      },
+      "facilityType": {
+        "id": 2,
+        "facilityType": "house"
+      },
+      "facilityStandardRoom": "vip",
+      "facilityDescriptionOtherConvenience": "Pool",
+      "facilityFloors": 4
+    },
+    {
+      "id": "HO-001",
+      "facilityName": "House Beach Front",
+      "facilityArea": 20000,
+      "facilityPrice": 20000,
+      "facilityMaxOfPeople": 7,
+      "facilityRentType": {
+        "id": 1,
+        "rentType": "year"
+      },
+      "facilityType": {
+        "id": 2,
+        "facilityType": "house"
+      },
+      "facilityStandardRoom": "vip",
+      "facilityDescriptionOtherConvenience": "Pool",
+      "facilityFloors": 4
+    },
+    {
+      "id": "a",
+      "facilityName": "a123",
+      "facilityArea": "1",
+      "facilityPrice": "1",
+      "facilityMaxOfPeople": "1",
+      "facilityRentType": {
+        "id": 1,
+        "rentType": "year"
+      },
+      "facilityType": {
+        "id": 1,
+        "facilityType": "villa"
+      },
+      "facilityStandardRoom": "a",
+      "facilityDescriptionOtherConvenience": "a",
+      "facilityPoolArea": "1",
+      "facilityFloors": "1"
     }
   ],
   "contractList": [
@@ -187,6 +244,48 @@
       "endDate": "2021-13-08",
       "deposit": 0,
       "total": 1000000,
+      "employee": "long",
+      "customer": {
+        "customerId": "KH-0001",
+        "customerName": "emlong1",
+        "customerDateOfBirth": "2000-01-01",
+        "customerGender": 1,
+        "customerIdCard": "100111111",
+        "customerPhone": "0905123123",
+        "customerEmail": "long1@gmail.com",
+        "customerType": {
+          "id": 1,
+          "customerType": "diamond"
+        },
+        "customerAddress": "DN"
+      },
+      "facility": {
+        "id": "VL-001",
+        "facilityName": "Villa Beach Front",
+        "facilityArea": 5000,
+        "facilityPrice": 15000,
+        "facilityMaxOfPeople": 10,
+        "facilityRentType": {
+          "id": 1,
+          "rentType": "year"
+        },
+        "facilityType": {
+          "id": 1,
+          "facilityType": "villa"
+        },
+        "facilityStandardRoom": "vip",
+        "facilityDescriptionOtherConvenience": "Pool",
+        "facilityPoolArea": 500,
+        "facilityFloors": 4
+      }
+    },
+    {
+      "id": 1,
+      "startDate": "2021-12-08",
+      "endDate": "2021-13-08",
+      "deposit": 0,
+      "total": 1000000,
+      "employee": "emlong2",
       "customer": {
         "customerId": "KH-0001",
         "customerName": "long1",
@@ -220,6 +319,46 @@
         "facilityPoolArea": 500,
         "facilityFloors": 4
       }
+    },
+    {
+      "startDate": "2022-06-19",
+      "endDate": "2022-06-22",
+      "deposit": 111,
+      "total": "",
+      "employee": "em long",
+      "customer": {
+        "id": "KH-0003",
+        "customerName": "long3",
+        "customerDateOfBirth": "2000-01-04",
+        "customerGender": 1,
+        "customerIdCard": "100111113",
+        "customerPhone": "0905123125",
+        "customerEmail": "long3@gmail.com",
+        "customerType": {
+          "id": 2,
+          "customerType": "platinum"
+        },
+        "customerAddress": "HN"
+      },
+      "facility": {
+        "id": "HO-001",
+        "facilityName": "House Beach Front",
+        "facilityArea": 20000,
+        "facilityPrice": 20000,
+        "facilityMaxOfPeople": 7,
+        "facilityRentType": {
+          "id": 1,
+          "rentType": "year"
+        },
+        "facilityType": {
+          "id": 2,
+          "facilityType": "house"
+        },
+        "facilityStandardRoom": "vip",
+        "facilityDescriptionOtherConvenience": "Pool",
+        "facilityFloors": 4
+      },
+      "id": 2
     }
   ]
 }

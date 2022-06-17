@@ -25,12 +25,27 @@ export class FacilitiesService {
     return this.http.get<Facility[]>(API_URL + '/facilityList');
   }
 
- public getFacilityTypeList(): Observable<FacilityType[]> {
-   return this.http.get<FacilityType[]>(API_URL + '/facilityTypeList');
+  public getFacilityTypeList(): Observable<FacilityType[]> {
+    return this.http.get<FacilityType[]>(API_URL + '/facilityTypeList');
+  }
 
- }
+  public getRentTypeList(): Observable<RentType[]> {
+    return this.http.get<RentType[]>(API_URL + '/rentTypeList');
+  }
 
- public getRentTypeList(): Observable<RentType[]> {
-   return this.http.get<RentType[]>(API_URL + '/rentTypeList');
- }
+  public deleteFacility(id: string): Observable<Facility> {
+    return this.http.delete<Facility>(`${API_URL}/facilityList/${id}`);
+  }
+
+  public saveFacility(facility): Observable<Facility> {
+    return this.http.post<Facility>(API_URL + '/facilityList', facility);
+  }
+
+  findById(id: string): Observable<Facility> {
+    return this.http.get<Facility>(`${API_URL}/facilityList/${id}`);
+  }
+
+  updateFacility(id: string, facility: Facility): Observable<Facility> {
+    return this.http.put<Facility>(`${API_URL}/facilityList/${id}`, facility);
+  }
 }

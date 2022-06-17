@@ -25,7 +25,7 @@ export class CustomerEditComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = paramMap.get('id');
       this.getCustomer(this.id);
-      console.log(this.confirmCustomer.id);
+      console.log(this.confirmCustomer.customerId);
     });
   }
 
@@ -33,7 +33,7 @@ export class CustomerEditComponent implements OnInit {
     this.submit = true;
     console.log(this.customerEditForm);
     if (this.customerEditForm.valid) {
-      this.customerService.updateCustomer(this.confirmCustomer.id, this.customerEditForm.value).subscribe(() => {
+      this.customerService.updateCustomer(this.confirmCustomer.customerId, this.customerEditForm.value).subscribe(() => {
         this.route.navigateByUrl('/customer/list');
       });
     }
@@ -47,7 +47,8 @@ export class CustomerEditComponent implements OnInit {
 
   public syncCustomer() {
     this.customerEditForm = new FormGroup({
-      id: new FormControl(this.confirmCustomer.id, [Validators.pattern(/^KH\-\d{4}$/)]),
+      customerId: new FormControl(this.confirmCustomer.customerId),
+      customerCode: new FormControl(this.confirmCustomer.customerId, [Validators.pattern(/^KH\-\d{4}$/)]),
       customerName: new FormControl(this.confirmCustomer.customerName, [Validators.required]),
       customerDateOfBirth: new FormControl(this.confirmCustomer.customerDateOfBirth,
         [Validators.required, Validators.pattern(/^\d{4}\-\d{2}\-\d{2}$/)]),

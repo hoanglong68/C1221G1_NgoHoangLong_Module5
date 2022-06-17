@@ -13,10 +13,9 @@ export class FacilitiesListComponent implements OnInit {
   facilityList: Facility[] = [];
   facilityTypeList: FacilityType[] = [];
   rentTypeList: RentType[] = [];
-
+  facilityNameToDelete: string;
+  facilityIdToDelete: string;
   constructor(private facilitiesService: FacilitiesService) {
-    this.getFacilityTypeList();
-    this.getRentTypeList();
   }
 
   ngOnInit(): void {
@@ -28,16 +27,13 @@ export class FacilitiesListComponent implements OnInit {
       this.facilityList = facilityList;
     });
   }
-
-  public getFacilityTypeList() {
-    return this.facilitiesService.getFacilityTypeList().subscribe(facilityTypeList => {
-      this.facilityTypeList = facilityTypeList;
-    });
+  public sendFacilityInfoToDelete(name: string, id: string) {
+    this.facilityNameToDelete = name;
+    this.facilityIdToDelete = id;
   }
-
-  public getRentTypeList() {
-    return this.facilitiesService.getRentTypeList().subscribe(rentTypeList => {
-      this.rentTypeList = rentTypeList;
+  public deleteFacility($event: string) {
+    this.facilitiesService.deleteFacility($event).subscribe(() => {
+      this.ngOnInit();
     });
   }
 }

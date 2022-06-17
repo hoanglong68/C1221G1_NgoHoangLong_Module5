@@ -7,7 +7,7 @@ import {HomeComponent} from './home/home.component';
 import {ContractListComponent} from './contract/contract-list/contract-list.component';
 import {FacilitiesEditComponent} from './facilities/facilities-edit/facilities-edit.component';
 import {ContractCreateComponent} from './contract/contract-create/contract-create.component';
-import {FacilityDeleteModalComponent} from './modal/facility-delete-modal/facility-delete-modal.component';
+import {FacilityDeleteModalComponent} from './facilities/facility-delete-modal/facility-delete-modal.component';
 
 
 // const routes: Routes = [];

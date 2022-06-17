@@ -32,6 +32,7 @@ export class CustomerListComponent implements OnInit {
   }
 
   public deleteCustomer($event: string) {
+    console.log($event);
     this.customerService.deleteCustomer($event).subscribe(() => {
       this.ngOnInit();
     });
@@ -39,7 +40,8 @@ export class CustomerListComponent implements OnInit {
 
   public getCustomerList() {
     return this.customerService.getCustomerList().subscribe(customerList => {
-      this.customerList = customerList;
+      // @ts-ignore
+      this.customerList = customerList.content;
     });
   }
 }

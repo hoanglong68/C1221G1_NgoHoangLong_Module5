@@ -1,15 +1,15 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {FacilitiesListComponent} from './facilities-list/facilities-list.component';
 import {FacilitiesEditComponent} from './facilities-edit/facilities-edit.component';
-import {FacilityDeleteModalComponent} from '../modal/facility-delete-modal/facility-delete-modal.component';
+import {FacilityDeleteModalComponent} from './facility-delete-modal/facility-delete-modal.component';
 import {FacilitiesCreateComponent} from './facilities-create/facilities-create.component';
 
 
 const routes: Routes = [
   {path: 'list', component: FacilitiesListComponent},
   {path: 'create', component: FacilitiesCreateComponent},
-  {path: 'edit', component: FacilitiesEditComponent},
+  {path: 'edit/:id', component: FacilitiesEditComponent},
   {path: 'delete', component: FacilityDeleteModalComponent},
 ];
 
@@ -17,4 +17,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class FacilitiesRoutingModule { }
+export class FacilitiesRoutingModule {
+}

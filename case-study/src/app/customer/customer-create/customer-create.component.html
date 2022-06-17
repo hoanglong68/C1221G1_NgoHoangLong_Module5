@@ -38,12 +38,12 @@
             <div class="col-sm-12">
               <div class="form-group mb-4 text-lg-start">
                 Id <span style="color: red"
-                         *ngIf="customerForm.controls.id.hasError('required') &&
-                           (customerForm.controls.id.touched || submit)">
+                         *ngIf="customerForm.controls.customerCode.hasError('required') &&
+                           (customerForm.controls.customerCode.touched || submit)">
                 Not Null !</span>
-                <span style="color: red" *ngIf="customerForm.controls.id.hasError('pattern')">
+                <span style="color: red" *ngIf="customerForm.controls.customerCode.hasError('pattern')">
                   KH-XXXX(x is number)</span>
-                <input class="form-control" type="text" formControlName="id" placeholder="KH-XXXX"></div>
+                <input class="form-control" type="text" formControlName="customerCode" placeholder="KH-XXXX"></div>
             </div>
           </div>
           <div class="row">
@@ -137,7 +137,7 @@
                 Not Null !</span>
                 <select class="form-select mb-4" formControlName="customerType">
                   <option value="">---select---</option>
-                  <option *ngFor="let item of customerTypeList" [ngValue]="item">{{item.customerType}}</option>
+                  <option *ngFor="let item of customerTypeList" [ngValue]="item">{{item.customerTypeName}}</option>
                 </select>
               </div>
             </div>

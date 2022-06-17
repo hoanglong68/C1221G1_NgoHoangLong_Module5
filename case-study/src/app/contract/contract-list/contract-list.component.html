@@ -35,16 +35,23 @@
           <th scope="col">#</th>
           <th scope="col">Start Date</th>
           <th scope="col">End Date</th>
+          <th scope="col">Employee</th>
           <th scope="col">Customer</th>
           <th scope="col">Deposit</th>
           <th scope="col">Facility</th>
         </tr>
         </thead>
         <tbody>
+        <tr *ngIf="contractList.length == 0">
+          <td class="text-center" colspan="8">
+            <h1 class="text-uppercase">No data</h1>
+          </td>
+        </tr>
         <tr *ngFor="let contract of contractList;let i = index">
           <th scope="row">{{i + 1}}</th>
           <td>{{contract.startDate | date: "dd-MM-yyyy"}}</td>
           <td>{{contract.endDate | date: "dd-MM-yyyy"}}</td>
+          <td>{{contract.employee}}</td>
           <td>{{contract.customer.customerName}}</td>
           <td>{{contract.deposit}}</td>
           <td>{{contract.facility.facilityName}}</td>
