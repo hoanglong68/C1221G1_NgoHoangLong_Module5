@@ -1,0 +1,70 @@
+{
+  "vehicleTypeList": [
+    {
+      "id": 1,
+      "type": "giường nằm"
+    },
+    {
+      "id": 2,
+      "type": "ghế ngồi"
+    }
+  ],
+  "vehicleList": [
+    {
+      "id": "104",
+      "vehicleType": {
+        "id": 1,
+        "type": "giường nằm"
+      },
+      "name": "mai linh",
+      "goPosition": "Hà Nội",
+      "comePosition": "Đà Nẵng",
+      "phone": "0905123123",
+      "email": "mailinh@gmail.com",
+      "goTime": "13:20",
+      "comeTime": "15:00"
+    },
+    {
+      "id": "302",
+      "vehicleType": {
+        "id": 2,
+        "type": "ghế ngồi"
+      },
+      "name": "hoàng long",
+      "goPosition": "Đà Nẵng",
+      "comePosition": "Hà Nội",
+      "phone": "0905123123",
+      "email": "hoanglongkl@gmail.com",
+      "goTime": "05:30",
+      "comeTime": "17:00"
+    },
+    {
+      "id": "304",
+      "vehicleType": {
+        "id": 2,
+        "type": "ghế ngồi"
+      },
+      "name": "hoàng long",
+      "goPosition": "Đà Nẵng",
+      "comePosition": "Hà Nội",
+      "phone": "0905123123",
+      "email": "hoanglong@gmail.com",
+      "goTime": "05:30",
+      "comeTime": "17:00"
+    },
+    {
+      "id": "305",
+      "vehicleType": {
+        "id": 1,
+        "type": "giường nằm"
+      },
+      "name": "hoàng long",
+      "goPosition": "Đà Nẵng",
+      "comePosition": "Hà Nội",
+      "phone": "0905123123",
+      "email": "hoanglong@gmail.com",
+      "goTime": "05:30",
+      "comeTime": "17:00"
+    }
+  ]
+}

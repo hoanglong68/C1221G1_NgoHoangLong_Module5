@@ -1,0 +1,19 @@
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Xóa Xe Mang SỐ Xe: <b class="text-danger">{{id}}</b></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h1><b>Tên Nhà Xe: </b>{{name}}</h1>
+        <h5 class="text-danger">Bạn có chắc chắn XÓA ?</h5>
+        <h6 class="text-warning">hành động này không thể hoàn tác !</h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button type="button" class="btn btn-danger" (click)="deleteVehicle()" data-bs-dismiss="modal">Xóa !</button>
+      </div>
+    </div>
+  </div>
+</div>

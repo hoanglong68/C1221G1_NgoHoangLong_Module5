@@ -1,0 +1,133 @@
+<div class="col-8 mx-auto">
+  <div class="mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg">
+    <form [formGroup]="vehicleCreateForm" *ngIf="vehicleCreateForm" (ngSubmit)="createVehicle()">
+      <div class="card px-1 py-4">
+        <div class="card-body">
+          <h3 class="mb-5">Tạo mới phương tiện</h3>
+          <h6 class="card-title mb-3 shadow text-info text-center">Nhập Thông Tin</h6>
+          <div class="row" hidden>
+            <div class="col-sm-12">
+              <div class="form-group mb-4 text-lg-start">
+                Id <span style="color: red"
+                         *ngIf="vehicleCreateForm.controls.vehicleId.hasError('required') &&
+                           (vehicleCreateForm.controls.vehicleId.touched || submit)">
+                Không Được Để Trống !</span>
+                <input class="form-control" type="text" formControlName="vehicleId"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group text-lg-start">
+                Loại Xe <span style="color: red"
+                              *ngIf="vehicleCreateForm.controls.vehicleType.hasError('required') &&
+                           (vehicleCreateForm.controls.vehicleType.touched || submit)">
+                Không Được Để Trống !</span>
+                <select class="form-select mb-4" formControlName="vehicleType">
+                  <option value="">---Chọn---</option>
+                  <option *ngFor="let item of vehicleTypeList" [ngValue]="item">{{item.vehicleTypeName}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group mb-4 text-lg-start">
+                Tên Nhà Xe <span style="color: red"
+                                 *ngIf="vehicleCreateForm.controls.vehicleName.hasError('required') &&
+                           (vehicleCreateForm.controls.vehicleName.touched || submit) ">
+                 Không Được Để Trống !</span>
+                <input class="form-control" type="text" formControlName="vehicleName"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group text-lg-start">
+                Điểm Đi <span style="color: red"
+                              *ngIf="vehicleCreateForm.controls.vehicleGoPosition.hasError('required') &&
+                           (vehicleCreateForm.controls.vehicleGoPosition.touched || submit)">
+                Không Được Để Trống !</span>
+                <select class="form-select mb-4" formControlName="vehicleGoPosition">
+                  <option value="">---Chọn---</option>
+                  <option value="Đà Nẵng">Đà Nẵng</option>
+                  <option value="Hà Nội">Hà Nội</option>
+                  <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group text-lg-start">
+                Điểm Đến <span style="color: red"
+                               *ngIf="vehicleCreateForm.controls.vehicleComePosition.hasError('required') &&
+                           (vehicleCreateForm.controls.vehicleComePosition.touched || submit)">
+                Không Được Để Trống !</span>
+                <select class="form-select mb-4" formControlName="vehicleComePosition">
+                  <option value="">---Chọn---</option>
+                  <option value="Đà Nẵng">Đà Nẵng</option>
+                  <option value="Hà Nội">Hà Nội</option>
+                  <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group mb-4 text-lg-start">
+                Số Điện Thoại <span style="color: red"
+                                    *ngIf="vehicleCreateForm.controls.vehiclePhone.hasError('required') &&
+                                    (vehicleCreateForm.controls.vehiclePhone.touched || submit)">
+                Không Được Để Trống !</span>
+                <span style="color: red"
+                      *ngIf="vehicleCreateForm.controls.vehiclePhone.hasError('pattern') &&
+                           (vehicleCreateForm.controls.vehiclePhone.touched || submit)">
+                Theo Định Dạng (090) hoặc (093) hoặc (097) và có 10 số !</span>
+                <input class="form-control" type="text" formControlName="vehiclePhone"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group mb-4 text-lg-start">
+                Email <span style="color: red"
+                            *ngIf="vehicleCreateForm.controls.vehicleEmail.hasError('required') &&
+                            (vehicleCreateForm.controls.vehicleEmail.touched || submit)">
+                Không Được Để Trống !</span>
+                <span style="color: red" *ngIf="vehicleCreateForm.controls.vehicleEmail.hasError('email')">
+                  ...@...chấm...</span>
+                <input class="form-control" type="text" formControlName="vehicleEmail"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group mb-4 text-lg-start">
+                Giờ Đi <span style="color: red"
+                             *ngIf="vehicleCreateForm.controls.vehicleGoTime.hasError('required') &&
+                           (vehicleCreateForm.controls.vehicleGoTime.touched || submit)">
+                Không Được Để Trống !</span>
+                <input class="form-control" type="time" formControlName="vehicleGoTime"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group mb-4 text-lg-start">
+                Giờ Đến <span style="color: red"
+                              *ngIf="vehicleCreateForm.controls.vehicleComeTime.hasError('required') &&
+                           (vehicleCreateForm.controls.vehicleComeTime.touched || submit)">
+                Không Được Để Trống !</span>
+                <input class="form-control" type="time" formControlName="vehicleComeTime"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2">
+              <button class="btn btn-warning" type="submit">Thêm !</button>
+            </div>
+            <div class="col-sm-2">
+              <button class="btn btn-primary" type="button" routerLink="/list">Quay Về !</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

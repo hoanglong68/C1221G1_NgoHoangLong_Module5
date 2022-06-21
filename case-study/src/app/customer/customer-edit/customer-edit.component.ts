@@ -17,7 +17,7 @@ export class CustomerEditComponent implements OnInit {
   id?: string;
   submit = false;
 
-  constructor(private activatedRoute: ActivatedRoute, private customerService: CustomerService, private route: Router) {
+    constructor(private activatedRoute: ActivatedRoute, private customerService: CustomerService, private route: Router) {
   }
 
   ngOnInit(): void {

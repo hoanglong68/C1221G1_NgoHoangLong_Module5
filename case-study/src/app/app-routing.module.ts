@@ -1,13 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {FacilitiesListComponent} from './facilities/facilities-list/facilities-list.component';
 import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
 import {HomeComponent} from './home/home.component';
-import {ContractListComponent} from './contract/contract-list/contract-list.component';
-import {FacilitiesEditComponent} from './facilities/facilities-edit/facilities-edit.component';
-import {ContractCreateComponent} from './contract/contract-create/contract-create.component';
-import {FacilityDeleteModalComponent} from './facilities/facility-delete-modal/facility-delete-modal.component';
 
 
 // const routes: Routes = [];

@@ -1,0 +1,77 @@
+<!--title-->
+<h1 class="text-center shadow">Ứng Dụng Quản Lý Bến Xe</h1>
+<button class="btn btn-success" routerLink="/create">Thêm Mới</button>
+<h3 class="mt-3">Tìm kiếm Nhà Xe</h3>
+<div class="form-inline my-lg-3">
+  <div class="row">
+    <div class="col-3">
+      <input class="form-control mr-sm-2" type="search" placeholder="Tên Nhà Xe" aria-label="Search"
+             name="vehicleName" #vehicleName>
+    </div>
+    <div class="col-3">
+      <select name="vehicleTypeId"
+              class="form-control" #vehicleTypeId>
+        <option value="">---Chọn---</option>
+        <option value="{{item.vehicleTypeId}}" *ngFor="let item of vehicleTypeList">{{item.vehicleTypeName}}</option>
+      </select>
+    </div>
+    <div class="col-4">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="search()">Tìm Kiếm</button>
+    </div>
+  </div>
+</div>
+<table class="table table-hover w-75 mx-auto shadow">
+  <thead class="thead-light">
+  <tr class="table-success">
+    <th scope="col">#</th>
+    <th scope="col">Số Xe</th>
+    <th scope="col">Loại Xe</th>
+    <th scope="col">Tên Nhà Xe</th>
+    <th scope="col">Điểm Đi</th>
+    <th scope="col">Điểm Đến</th>
+    <th scope="col">Số Điện Thoại</th>
+    <th scope="col">Email</th>
+    <th scope="col">Giờ Đi</th>
+    <th scope="col">Giờ Đến</th>
+    <th scope="col" colspan="2" style="text-align: center">Chức Năng</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngIf="vehicleList.length == 0">
+    <td class="text-center" colspan="6">
+      <h1 class="text-uppercase">No data</h1>
+    </td>
+  </tr>
+  <!--  |paginate : { itemsPerPage: 2, currentPage: page };-->
+  <tr *ngFor="let vehicle of vehicleList let i = index">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{vehicle.vehicleId}}</td>
+    <td>{{vehicle.vehicleType.vehicleTypeName}}</td>
+    <td>{{vehicle.vehicleName}}</td>
+    <td>{{vehicle.vehicleGoPosition}}</td>
+    <td>{{vehicle.vehicleComePosition}}</td>
+    <td>{{vehicle.vehiclePhone}}</td>
+    <td>{{vehicle.vehicleEmail}}</td>
+    <td>{{vehicle.vehicleGoTime}}</td>
+    <td>{{vehicle.vehicleComeTime}}</td>
+    <td>
+      <button type="button" class="btn btn-warning" [routerLink]="['/edit',vehicle.vehicleId]">
+        Sửa
+      </button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"
+              (click)="sendVehicleInfoToDelete(vehicle.vehicleName,vehicle.vehicleId)">
+        Xóa
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<!--delete modal-->
+<app-vehicle-park-delete-modal
+  [name]="vehicleNameToDelete"
+  [id]="vehicleIdToDelete"
+  (emitId)="deleteVehicle($event)"
+>
+</app-vehicle-park-delete-modal>
