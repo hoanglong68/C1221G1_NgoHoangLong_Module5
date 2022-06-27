@@ -8,6 +8,7 @@ export interface Vehicle {
   vehicleComePosition: string;
   vehiclePhone: string;
   vehicleEmail: string;
+  vehicleImage: string;
   vehicleGoTime: string;
   vehicleComeTime: string;
   vehicleStatus: boolean;

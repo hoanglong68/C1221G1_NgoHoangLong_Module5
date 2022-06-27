@@ -101,12 +101,13 @@ public class VehicleRestController {
         this.vehicleService.delete(vehicle);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
     @GetMapping("/searchingVehicle")
     public ResponseEntity<List<Vehicle>> getVehicleList(@RequestParam Optional<String> vehicleName,
                                                         @RequestParam Optional<String> vehicleTypeId) {
-       String name = vehicleName.orElse("");
-       String id = vehicleTypeId.orElse("%");
-        List<Vehicle> vehicleSearchedList = this.vehicleService.searchBy(name,id);
+        String name = vehicleName.orElse("");
+        String id = vehicleTypeId.orElse("%");
+        List<Vehicle> vehicleSearchedList = this.vehicleService.searchBy(name, id);
         if (vehicleSearchedList.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {

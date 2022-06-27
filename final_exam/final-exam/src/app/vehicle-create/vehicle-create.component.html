@@ -1,6 +1,6 @@
 <div class="col-8 mx-auto">
   <div class="mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg">
-    <form [formGroup]="vehicleCreateForm" *ngIf="vehicleCreateForm" (ngSubmit)="createVehicle()">
+    <form [formGroup]="vehicleCreateForm" *ngIf="vehicleCreateForm" (ngSubmit)="save()">
       <div class="card px-1 py-4">
         <div class="card-body">
           <h3 class="mb-5">Tạo mới phương tiện</h3>
@@ -115,6 +115,12 @@
                            (vehicleCreateForm.controls.vehicleComeTime.touched || submit)">
                 Không Được Để Trống !</span>
                 <input class="form-control" type="time" formControlName="vehicleComeTime"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group mb-4 text-lg-start">
+                <input class="form-control" type="file" (change)="showPreview($event)"></div>
             </div>
           </div>
           <div class="row">

@@ -9,6 +9,7 @@ public class VehicleDto {
     private String vehicleComePosition;
     private String vehiclePhone;
     private String vehicleEmail;
+    private String vehicleImage;
     private String vehicleGoTime;
     private String vehicleComeTime;
     private boolean vehicleStatus;
@@ -16,6 +17,14 @@ public class VehicleDto {
 
     public Integer getVehicleId() {
         return vehicleId;
+    }
+
+    public String getVehicleImage() {
+        return vehicleImage;
+    }
+
+    public void setVehicleImage(String vehicleImage) {
+        this.vehicleImage = vehicleImage;
     }
 
     public void setVehicleId(Integer vehicleId) {

@@ -1,8 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {VehicleType} from "../model/vehicle-type";
 import {VehicleService} from "../service/vehicle.service";
 import {Router} from "@angular/router";
+import {AngularFireStorage} from "@angular/fire/storage";
+import {formatDate} from "@angular/common";
+import {finalize} from "rxjs/operators";
+import {Vehicle} from "../model/vehicle";
 
 @Component({
   selector: 'app-vehicle-create',
@@ -13,9 +17,12 @@ export class VehicleCreateComponent implements OnInit {
   vehicleCreateForm: FormGroup;
   vehicleTypeList: VehicleType[] = [];
   submit = false;
+  url: string;
+  private selectedImage: any;
 
   constructor(private route: Router,
-              private vehicleService: VehicleService) {
+              private vehicleService: VehicleService,
+              @Inject(AngularFireStorage) private storage: AngularFireStorage) {
   }
 
   ngOnInit(): void {
@@ -30,6 +37,7 @@ export class VehicleCreateComponent implements OnInit {
         Validators.pattern(/^((097)|(090)|(091))\d{7}$/)]),
       vehicleEmail: new FormControl('', [Validators.required,
         Validators.email]),
+      vehicleImage: new FormControl(''),
       vehicleGoTime: new FormControl('', [Validators.required]),
       vehicleComeTime: new FormControl('', [Validators.required]),
       vehicleStatus: new FormControl(1)
@@ -50,5 +58,31 @@ export class VehicleCreateComponent implements OnInit {
         this.route.navigateByUrl('/list');
       });
     }
+  }
+
+  getCurrentDateTime(): string {
+    return formatDate(new Date(), 'dd-MM-yyyyhhmmssa', 'en-US');
+  }
+
+  save() {
+    const nameImg = this.getCurrentDateTime() + this.selectedImage.name;
+    const fileRef = this.storage.ref(nameImg);
+    this.storage.upload(nameImg, this.selectedImage).snapshotChanges().pipe(
+      finalize(() => {
+        fileRef.getDownloadURL().subscribe((url) => {
+          this.url = url;
+          console.log(this.url);
+          this.vehicleCreateForm.patchValue({vehicleImage: this.url});
+          console.log(this.vehicleCreateForm);
+          this.vehicleService.createVehicle(this.vehicleCreateForm.value).subscribe(() => {
+            this.route.navigateByUrl('/list');
+          })
+        });
+      })
+    ).subscribe();
+  }
+
+  showPreview(event: any) {
+    this.selectedImage = event.target.files[0];
   }
 }

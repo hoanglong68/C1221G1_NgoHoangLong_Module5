@@ -9,6 +9,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { VehicleParkDeleteModalComponent } from './vehicle-park-delete-modal/vehicle-park-delete-modal.component';
 import { VehicleParkEditComponent } from './vehicle-park-edit/vehicle-park-edit.component';
 import { VehicleCreateComponent } from './vehicle-create/vehicle-create.component';
+import {AngularFireModule} from "@angular/fire";
+import {environment} from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { VehicleCreateComponent } from './vehicle-create/vehicle-create.componen
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]

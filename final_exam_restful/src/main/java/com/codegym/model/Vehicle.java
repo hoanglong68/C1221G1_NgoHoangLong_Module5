@@ -12,6 +12,7 @@ public class Vehicle {
     private String vehicleComePosition;
     private String vehiclePhone;
     private String vehicleEmail;
+    private String vehicleImage;
     @Column(columnDefinition = "TIME")
     private String vehicleGoTime;
     @Column(columnDefinition = "TIME")
@@ -23,6 +24,14 @@ public class Vehicle {
 
     public Integer getVehicleId() {
         return vehicleId;
+    }
+
+    public String getVehicleImage() {
+        return vehicleImage;
+    }
+
+    public void setVehicleImage(String vehicleImage) {
+        this.vehicleImage = vehicleImage;
     }
 
     public void setVehicleId(Integer vehicleId) {

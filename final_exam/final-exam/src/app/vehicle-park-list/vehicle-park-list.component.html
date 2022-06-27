@@ -25,6 +25,7 @@
   <tr class="table-success">
     <th scope="col">#</th>
     <th scope="col">Số Xe</th>
+    <th scope="col">Ảnh</th>
     <th scope="col">Loại Xe</th>
     <th scope="col">Tên Nhà Xe</th>
     <th scope="col">Điểm Đi</th>
@@ -46,6 +47,7 @@
   <tr *ngFor="let vehicle of vehicleList let i = index">
     <th scope="row">{{i + 1}}</th>
     <td>{{vehicle.vehicleId}}</td>
+    <td><img [src]="vehicle.vehicleImage" height="50"></td>
     <td>{{vehicle.vehicleType.vehicleTypeName}}</td>
     <td>{{vehicle.vehicleName}}</td>
     <td>{{vehicle.vehicleGoPosition}}</td>
